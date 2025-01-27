@@ -40,3 +40,12 @@ class OsuFileFormatParser:
         song_filename = self.data["General"]["AudioFilename"]
 
         return f"{self.osu_file_path}/../{song_filename}"
+    
+    def get_timing_points(self) -> list[str]:
+        return self.data["TimingPoints"]
+    
+    def get_hit_objects(self) -> list[str]:
+        return self.data["HitObjects"]
+    
+    def get_full_data(self) -> dict:
+        return self.data
