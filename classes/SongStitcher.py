@@ -3,7 +3,9 @@ from pydub import AudioSegment
 from utils.utils import convert_osu_time_to_ms
 
 class SongStitcher:
-    def __init__(self):
+    def __init__(self, diff_name):
+        self.diff_name = diff_name
+
         self.combined_audio: AudioSegment = AudioSegment.silent(duration=0)
         self.break_time: AudioSegment = AudioSegment.silent(duration=5000)
 
@@ -25,8 +27,6 @@ class SongStitcher:
         new_end_time = min(len(audio), end_time + 2000)
         diff = abs(new_end_time - end_time)
 
-        # print(end_time)
-
         return (new_end_time, diff)
 
     def stitch(self, song_path: str, start_time: int, end_time: int):
@@ -46,9 +46,7 @@ class SongStitcher:
         self.cur_song_true_end_time = end_time - end_diff
 
     def export(self):
-        print(convert_osu_time_to_ms("03:16:897"))
-
-        self.combined_audio.export("testdan/final.mp3", format="mp3")
+        self.combined_audio.export(f"testdan/final_{self.diff_name}.mp3", format="mp3")
 
     def get_true_start_time(self) -> int:
         return self.cur_song_true_start_time

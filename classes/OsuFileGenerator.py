@@ -3,12 +3,14 @@ import bisect
 from functools import cmp_to_key
 
 class OsuFileGenerator:
-    def __init__(self):
+    def __init__(self, diff_name, circle_size, approach_rate, overall_difficulty, hp):
+        self.diff_name = diff_name
+
         self.file_contents_json = {
             "General": {
-                "AudioFilename": "final.mp3",
+                "AudioFilename": f"final_{diff_name}.mp3",
                 "AudioLeadIn": "0",
-                "PreviewTime": "-1",
+                "PreviewTime": "2000",
                 "Countdown": "0",
                 "SampleSet": "Soft",
                 "StackLeniency": "0.7",
@@ -29,22 +31,22 @@ class OsuFileGenerator:
                 "Artist": "Various Artists",
                 "ArtistUnicode": "Various Artists",
                 "Creator": "lolol234",
-                "Version": "DELTA",
+                "Version": diff_name,
                 "Source": "",
                 "Tags": "Osu Standard Dan",
                 "BeatmapID": "-1",
                 "BeatmapSetID": "-1"
             },
-            "Difficulty": { # TODO: implement later
-                "HPDrainRate": "1",
-                "CircleSize": "4",
-                "OverallDifficulty": "9",
-                "ApproachRate": "9.8",
-                "SliderMultiplier": "1.8", # TODO: fix this
+            "Difficulty": {
+                "HPDrainRate": hp,
+                "CircleSize": circle_size,
+                "OverallDifficulty": overall_difficulty,
+                "ApproachRate": approach_rate,
+                "SliderMultiplier": "2.1", # TODO: fix this
                 "SliderTickRate": "2"
             },
             "Events": [
-                "0,0,\"bg.png\",0,0"
+                f"0,0,\"bg_{diff_name}.png\",0,0"
             ],
             "TimingPoints": [],
             "Colours": {
@@ -162,7 +164,7 @@ class OsuFileGenerator:
             self.file_contents_json["HitObjects"].append(cur_hitobject)
 
     def export(self):
-        with open("testdan/final.osu", 'w', encoding='utf-8') as osu_file:
+        with open(f"testdan/final_{self.diff_name}.osu", 'w', encoding='utf-8') as osu_file:
             osu_file.write('osu file format v14\n\n')
 
             for section, content in self.file_contents_json.items():

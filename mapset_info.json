@@ -1,0 +1,152 @@
+[
+    {
+        "diff_name": "GAMMA DAN",
+        "symbol": "γ",
+        "circle_size": "4.0",
+        "approach_rate": "9.8",
+        "overall_difficulty": "9.0",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/742961 Imperial Circus Dead Decadence - Yomi yori Kikoyu, Koukoku no Tou to Honoo no Shoujo/Imperial Circus Dead Decadence - Yomi yori Kikoyu, Koukoku no Tou to Honoo no Shoujo. (Riven) [Kurushimi 1.05x (231bpm) AR10].osu",
+                "start_time": "00:01:085",
+                "end_time": "01:28:358"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/490662 Shoji Meguro - Kimi no Kioku (Aethral Remix)/Shoji Meguro - Kimi no Kioku (Aethral Remix) (Akali) [Remembrance 1.5x (255bpm) AR10 OD9.8].osu",
+                "start_time": "00:00:016",
+                "end_time": "01:22:839"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/679239 Yuyoyuppe - Palette GAMMA/Yuyoyuppe - Palette GAMMA (mithew) [Visions].osu",
+                "start_time": "00:05:425",
+                "end_time": "01:18:533"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/1581301 Dimrain47 - Operation_ Evolution/Dimrain47 - Operation Evolution (Dada) [Salvation Solution 1.5x (248bpm) AR10].osu",
+                "start_time": "01:22:217",
+                "end_time": "03:17:854"
+            }
+        ]
+    },
+    {
+        "diff_name": "DELTA DAN",
+        "symbol": "δ",
+        "circle_size": "4.0",
+        "approach_rate": "9.8",
+        "overall_difficulty": "9.0",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/783213 UNDEAD CORPORATION - Embraced by the Flame/UNDEAD CORPORATION - Embraced by the Flame (PoNo) [Crimson Shard 1.05x (226bpm) CS4 AR10 OD9.5].osu",
+                "start_time": "00:49:084",
+                "end_time": "01:45:563"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/388428 Reol - Midnight Stroller/Reol - Midnight Stroller (Chaoslitz) [Nightfall 1.8x (252bpm) AR10 OD8].osu",
+                "start_time": "00:00:354",
+                "end_time": "01:47:020"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/490121 Rings Of Saturn - Senseless Massacre/Rings of Saturn - Senseless Massacre (Mazzerin) [LMT's Expert 1.1x (297bpm) CS4 AR10 OD9].osu",
+                "start_time": "00:01:242",
+                "end_time": "02:30:332"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/1929702 DJ SHARPNEL - CYBER INDUCTANCE/DJ SHARPNEL - CYBER INDUCTANCE (jellium) [1.3x].osu",
+                "start_time": "01:57:260",
+                "end_time": "03:43:462"
+            }
+        ]
+    },
+    {
+        "diff_name": "EPSILON DAN",
+        "symbol": "ε",
+        "circle_size": "4.0",
+        "approach_rate": "10",
+        "overall_difficulty": "9.5",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/1804362 Kardashev - Cellar of Ghosts/Kardashev - Cellar of Ghosts (kiwies) [Remnants 1.1x (231bpm) CS4 AR10 OD9.8].osu",
+                "start_time": "04:34:264",
+                "end_time": "05:44:913"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/Halozy+-+Heart+of+Night/Halozy - Heart of Night (Chaoslitz) [Life of Loneliness 2x (256bpm) AR10 OD10].osu",
+                "start_time": "01:12:310",
+                "end_time": "02:43:130"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/553906 BLANKFIELD - Goodbye/BLANKFIELD - Goodbye (Kyubey) [Intense 1.1x (284bpm) AR10 OD10].osu",
+                "start_time": "02:40:100",
+                "end_time": "04:04:933"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/991300 Fleshgod Apocalypse - The Deceit/Fleshgod Apocalypse - The Deceit (Mazzerin) [Agony 1.05x (263bpm) CS4 AR10 OD10].osu",
+                "start_time": "03:16:897",
+                "end_time": "04:50:840"
+            }
+        ]
+    },
+    {
+        "diff_name": "ZETA DAN",
+        "symbol": "ζ",
+        "circle_size": "4.0",
+        "approach_rate": "10",
+        "overall_difficulty": "9.5",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/473166 UNDEAD CORPORATION - Bloodthirsty Nightmare Lullaby  The Empress/UNDEAD CORPORATION - Bloodthirsty Nightmare Lullaby  The Empress (EphemeralFetish) [Starbow Break Old Ver. V1].osu",
+                "start_time": "05:11:458",
+                "end_time": "07:35:458"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/71856 yu_tokiwadjw - murmur twins/yu_tokiwa.djw - murmur twins (Muya) [Another 1.65x (287bpm) CS4 AR10 OD9].osu",
+                "start_time": "00:01:485",
+                "end_time": "01:08:679"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/672013 Silvia - Vertex Delta/Silvia - Vertex Gamma (mithew) [GAMMA 1.1x (330bpm) AR10 OD9].osu",
+                "start_time": "00:12:304",
+                "end_time": "01:23:031"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/297933 Yooh - Ice Angel/Yooh - Ice Angel (ktgster) [Saint 1.65x (277bpm) CS4 AR10 OD8.7].osu",
+                "start_time": "02:00:000",
+                "end_time": "03:36:916"
+            }
+        ]
+    },
+    {
+        "diff_name": "ETA DAN",
+        "symbol": "η",
+        "circle_size": "4.0",
+        "approach_rate": "10",
+        "overall_difficulty": "9.8",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/2078621 Raimukun - Icyxis ~True Ending~/Raimukun - Icyxis ~True Ending~ (knowledgeking) [Blessed of Aggelos ~Fake Sanctity~ 1.15x (255bpm) AR10 OD9.5].osu",
+                "start_time": "01:38:784",
+                "end_time": "02:50:229"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/1312076 II-L - SPUTNIK-3/II-L - SPUTNIK-3 (DeviousPanda) [Expert 1.6x (272bpm) CS4 AR10 OD8.3].osu",
+                "start_time": "00:00:869",
+                "end_time": "01:46:751"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/UNDEAD CORPORATION - MEGALOMANIA 2/UNDEAD CORPORATION - MEGALOMANIA (GoldenWolf) [woof 1.2x (324bpm) CS4 AR10 OD9.5].osu",
+                "start_time": "01:43:699",
+                "end_time": "03:45:180"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/2125044 -45 - Crimsonic dimension/-45 - Crimsonic dimension (Sanch-KK) [Phantasm 1.85x (281bpm) AR10 OD8].osu",
+                "start_time": "02:04:556",
+                "end_time": "03:40:147"
+            }
+        ]
+    }
+]
