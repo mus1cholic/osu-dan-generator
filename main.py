@@ -34,6 +34,7 @@ def create_dan(mapset):
         # add timing points and hit objects
         timing_points = file_parser.get_timing_points()
         hit_objects = file_parser.get_hit_objects()
+        slider_multiplier = file_parser.get_slider_multiplier()
 
         true_start_time = song_stitcher.get_true_start_time()
         fade_in_start_time = song_stitcher.get_fade_in_start_time()
@@ -41,7 +42,7 @@ def create_dan(mapset):
         fade_out_end_time = song_stitcher.get_fade_out_end_time
         cur_offset = song_stitcher.get_offset()
 
-        osu_file_generator.add_timing_points(timing_points, true_start_time, true_end_time, fade_in_start_time, cur_offset)
+        osu_file_generator.add_timing_points(timing_points, slider_multiplier, true_start_time, true_end_time, fade_in_start_time, cur_offset)
         osu_file_generator.add_hit_objects(hit_objects, true_start_time, true_end_time, fade_in_start_time, cur_offset)
 
         # add backgrounds

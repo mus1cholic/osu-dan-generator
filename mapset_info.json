@@ -1,5 +1,65 @@
 [
     {
+        "diff_name": "ALPHA DAN",
+        "symbol": "α",
+        "circle_size": "4.0",
+        "approach_rate": "9.7",
+        "overall_difficulty": "9.0",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/1695872 BABYMETAL - Arkadia/BABYMETAL - Arkadia (ItsWinter) [Atarashii Mirai].osu",
+                "start_time": "02:04:564",
+                "end_time": "03:21:814"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/388428 Reol - Midnight Stroller/Reol - Midnight Stroller (Chaoslitz) [Nightfall 1.7x (238bpm) AR10 OD9.3].osu",
+                "start_time": "00:00:375",
+                "end_time": "01:53:316"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/Tatsh - IMAGE -MATERIAL- Version/Tatsh - IMAGE -MATERIAL- Version 0 (Scorpiour) [Scorpiour 1.05x (273bpm) AR10 OD9.3].osu",
+                "start_time": "04:10:670",
+                "end_time": "06:05:834"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/257793 Yuyoyuppe - AiAe/Yuyoyuppe - AiAe (Fort) [Expert 1.4x (252bpm) AR10 OD9.3].osu",
+                "start_time": "00:00:720",
+                "end_time": "02:17:922"
+            }
+        ]
+    },
+    {
+        "diff_name": "BETA DAN",
+        "symbol": "β",
+        "circle_size": "4.0",
+        "approach_rate": "9.7",
+        "overall_difficulty": "9.0",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/933630 Aether Realm - The Sun, The Moon, The Star/Aether Realm - The Sun, The Moon, The Star (ItsWinter) [Mourning Those Things I've Long Left Behind].osu",
+                "start_time": "14:13:913",
+                "end_time": "16:13:913"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/1276378 lapix - Slipstream (Extended Mix)/lapix - Slipstream (Extended Mix) (KKipalt) [Collab Corsace 1.5x (262bpm) CS4 OD9.3].osu",
+                "start_time": "01:39:974",
+                "end_time": "02:40:317"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/sHimaU - Slotcore is Dead 2/sHimaU - Slotcore is Dead (Zapy) [Poltergeist 1.05x (284bpm) AR10 OD9.3].osu",
+                "start_time": "01:00:409",
+                "end_time": "02:35:224"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/158023 UNDEAD CORPORATION - Everything will freeze/UNDEAD CORPORATION - Everything will freeze (Ekoro) [Time Freeze].osu",
+                "start_time": "00:00:225",
+                "end_time": "02:04:225"
+            }
+        ]
+    },
+    {
         "diff_name": "GAMMA DAN",
         "symbol": "γ",
         "circle_size": "4.0",
@@ -14,8 +74,8 @@
             },
             {
                 "osu_file_path": "D:/osu!/Songs/490662 Shoji Meguro - Kimi no Kioku (Aethral Remix)/Shoji Meguro - Kimi no Kioku (Aethral Remix) (Akali) [Remembrance 1.5x (255bpm) AR10 OD9.8].osu",
-                "start_time": "00:00:016",
-                "end_time": "01:22:839"
+                "start_time": "01:22:839",
+                "end_time": "02:45:663"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/679239 Yuyoyuppe - Palette GAMMA/Yuyoyuppe - Palette GAMMA (mithew) [Visions].osu",
@@ -43,14 +103,14 @@
                 "end_time": "01:45:563"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/388428 Reol - Midnight Stroller/Reol - Midnight Stroller (Chaoslitz) [Nightfall 1.8x (252bpm) AR10 OD8].osu",
-                "start_time": "00:00:354",
-                "end_time": "01:47:020"
+                "osu_file_path": "D:/osu!/Songs/869649 455-38B - G e n g a o z o - f o o n/455-38B - G e n g a o z o - f o o n (ktgster) [Extreme 1.2x (184bpm) OD10].osu",
+                "start_time": "00:01:242",
+                "end_time": "02:03:868"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/490121 Rings Of Saturn - Senseless Massacre/Rings of Saturn - Senseless Massacre (Mazzerin) [LMT's Expert 1.1x (297bpm) CS4 AR10 OD9].osu",
                 "start_time": "00:01:242",
-                "end_time": "02:30:332"
+                "end_time": "02:03:868"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/1929702 DJ SHARPNEL - CYBER INDUCTANCE/DJ SHARPNEL - CYBER INDUCTANCE (jellium) [1.3x].osu",

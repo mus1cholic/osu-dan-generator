@@ -39,6 +39,9 @@ class OsuFileFormatParser:
                         data[current_section][key.strip()] = value.strip()
         
         self.data = data
+    
+    def get_slider_multiplier(self) -> float:
+        return float(self.data["Difficulty"]["SliderMultiplier"])
 
     def get_song_file_path(self) -> str:
         song_filename = self.data["General"]["AudioFilename"]
