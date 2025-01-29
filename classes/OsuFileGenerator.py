@@ -116,19 +116,7 @@ class OsuFileGenerator:
             cur[0] = str(cur_time)
             timings.append(",".join(cur))
 
-        def custom_cmp(timing1, timing2):
-            # put red lines before green lines
-            timing1_split = timing1.split(",")
-            timing2_split = timing2.split(",")
-
-            if int(timing1_split[0]) < int(timing2_split[0]):
-                return -1
-            elif int(timing1_split[0]) > int(timing2_split[0]):
-                return 1
-            else:
-                return -1 if int(timing1_split[6]) == 1 else 1
-
-        timings.sort(key=cmp_to_key(custom_cmp))
+        timings.sort(key=lambda x: int(x.split(",")[0]))
 
         slider_velocity_adjust = slider_multiplier / 2.0
 

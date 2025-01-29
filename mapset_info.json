@@ -3,7 +3,7 @@
         "diff_name": "ALPHA DAN",
         "symbol": "α",
         "circle_size": "4.0",
-        "approach_rate": "9.7",
+        "approach_rate": "9.8",
         "overall_difficulty": "9.0",
         "hp": "1.0",
         "beatmaps": [
@@ -23,9 +23,9 @@
                 "end_time": "06:05:834"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/257793 Yuyoyuppe - AiAe/Yuyoyuppe - AiAe (Fort) [Expert 1.4x (252bpm) AR10 OD9.3].osu",
-                "start_time": "00:00:720",
-                "end_time": "02:17:922"
+                "osu_file_path": "D:/osu!/Songs/158023 UNDEAD CORPORATION - Everything will freeze/UNDEAD CORPORATION - Everything will freeze (Ekoro) [Time Freeze].osu",
+                "start_time": "00:00:225",
+                "end_time": "02:04:225"
             }
         ]
     },
@@ -33,7 +33,7 @@
         "diff_name": "BETA DAN",
         "symbol": "β",
         "circle_size": "4.0",
-        "approach_rate": "9.7",
+        "approach_rate": "9.8",
         "overall_difficulty": "9.0",
         "hp": "1.0",
         "beatmaps": [
@@ -53,9 +53,9 @@
                 "end_time": "02:35:224"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/158023 UNDEAD CORPORATION - Everything will freeze/UNDEAD CORPORATION - Everything will freeze (Ekoro) [Time Freeze].osu",
-                "start_time": "00:00:225",
-                "end_time": "02:04:225"
+                "osu_file_path": "D:/osu!/Songs/1286450 DJ SHARPNEL - FUTURE DOMINATORS/DJ SHARPNEL - FUTURE DOMINATORS (-Tynamo) [yamate 1.1x (231bpm) OD9.3].osu",
+                "start_time": "02:57:647",
+                "end_time": "04:47:620"
             }
         ]
     },
@@ -93,8 +93,8 @@
         "diff_name": "DELTA DAN",
         "symbol": "δ",
         "circle_size": "4.0",
-        "approach_rate": "9.8",
-        "overall_difficulty": "9.0",
+        "approach_rate": "10",
+        "overall_difficulty": "9.5",
         "hp": "1.0",
         "beatmaps": [
             {
@@ -103,9 +103,9 @@
                 "end_time": "01:45:563"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/869649 455-38B - G e n g a o z o - f o o n/455-38B - G e n g a o z o - f o o n (ktgster) [Extreme 1.2x (184bpm) OD10].osu",
-                "start_time": "00:01:242",
-                "end_time": "02:03:868"
+                "osu_file_path": "D:/osu!/Songs/Halozy+-+Heart+of+Night/Halozy - Heart of Night (Chaoslitz) [Life of Loneliness 2x (256bpm) AR10 OD10].osu",
+                "start_time": "01:12:310",
+                "end_time": "02:43:130"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/490121 Rings Of Saturn - Senseless Massacre/Rings of Saturn - Senseless Massacre (Mazzerin) [LMT's Expert 1.1x (297bpm) CS4 AR10 OD9].osu",
@@ -133,14 +133,14 @@
                 "end_time": "05:44:913"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/Halozy+-+Heart+of+Night/Halozy - Heart of Night (Chaoslitz) [Life of Loneliness 2x (256bpm) AR10 OD10].osu",
-                "start_time": "01:12:310",
-                "end_time": "02:43:130"
+                "osu_file_path": "D:/osu!/Songs/869649 455-38B - G e n g a o z o - f o o n/455-38B - G e n g a o z o - f o o n (ktgster) [Extreme 1.2x (184bpm) OD10].osu",
+                "start_time": "00:32:669",
+                "end_time": "02:27:702"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/553906 BLANKFIELD - Goodbye/BLANKFIELD - Goodbye (Kyubey) [Intense 1.1x (284bpm) AR10 OD10].osu",
-                "start_time": "02:40:100",
-                "end_time": "04:04:933"
+                "osu_file_path": "D:/osu!/Songs/48979 Hatsune Miku - Mythologia's End/Hatsune Miku - Mythologia's End (val0108) [Myth0108ia 1.55x (302bpm) AR10 OD9.3].osu",
+                "start_time": "01:07:677",
+                "end_time": "03:00:431"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/991300 Fleshgod Apocalypse - The Deceit/Fleshgod Apocalypse - The Deceit (Mazzerin) [Agony 1.05x (263bpm) CS4 AR10 OD10].osu",
@@ -154,7 +154,7 @@
         "symbol": "ζ",
         "circle_size": "4.0",
         "approach_rate": "10",
-        "overall_difficulty": "9.5",
+        "overall_difficulty": "9.8",
         "hp": "1.0",
         "beatmaps": [
             {
@@ -173,9 +173,9 @@
                 "end_time": "01:23:031"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/297933 Yooh - Ice Angel/Yooh - Ice Angel (ktgster) [Saint 1.65x (277bpm) CS4 AR10 OD8.7].osu",
-                "start_time": "02:00:000",
-                "end_time": "03:36:916"
+                "osu_file_path": "D:/osu!/Songs/297933 Yooh - Ice Angel/Yooh - Ice Angel (ktgster) [Saint 1.6x (269bpm) CS4 AR10 OD9.3].osu",
+                "start_time": "02:03:750",
+                "end_time": "03:43:694"
             }
         ]
     },

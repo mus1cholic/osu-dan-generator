@@ -7,7 +7,8 @@ class SongStitcher:
         self.diff_name = diff_name
 
         self.combined_audio: AudioSegment = AudioSegment.silent(duration=0)
-        self.break_time: AudioSegment = AudioSegment.silent(duration=5000)
+        self.break_time: AudioSegment = AudioSegment.from_file("res/audio/rain.mp3")[5000:10000]
+        self.break_time = self.break_time.fade_in(duration=1000).fade_out(duration=1000)
 
         self.cur_song_true_start_time = 0
         self.cur_song_fade_in_start_time = 0
