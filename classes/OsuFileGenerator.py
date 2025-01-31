@@ -1,14 +1,14 @@
 import bisect
 
-from functools import cmp_to_key
-
 class OsuFileGenerator:
-    def __init__(self, diff_name, circle_size, approach_rate, overall_difficulty, hp):
+    def __init__(self, diff_name, set_title, set_id, circle_size, approach_rate, overall_difficulty, hp):
         self.diff_name = diff_name
+        self.set_title = set_title
+        self.set_id = set_id
 
         self.file_contents_json = {
             "General": {
-                "AudioFilename": f"final_{diff_name}.mp3",
+                "AudioFilename": f"{diff_name}.mp3",
                 "AudioLeadIn": "0",
                 "PreviewTime": "2000",
                 "Countdown": "0",
@@ -26,8 +26,8 @@ class OsuFileGenerator:
                 "TimelineZoom": "1"
             },
             "Metadata": {
-                "Title": "Tapping Dan",
-                "TitleUnicode": "Tapping Dan",
+                "Title": self.set_title,
+                "TitleUnicode": self.set_title,
                 "Artist": "Various Artists",
                 "ArtistUnicode": "Various Artists",
                 "Creator": "lolol234",
@@ -35,7 +35,7 @@ class OsuFileGenerator:
                 "Source": "",
                 "Tags": "Osu Standard Dan",
                 "BeatmapID": "-1",
-                "BeatmapSetID": "-1"
+                "BeatmapSetID": self.set_id
             },
             "Difficulty": {
                 "HPDrainRate": hp,
@@ -64,8 +64,6 @@ class OsuFileGenerator:
         uninherited_timings_points_arr = []
         inherited_timings_points_arr = []
 
-        # TODO: slight bug, there is a red line that is added 05:29:686 that corresponds to lugal en ki, but i dont need it
-
         for time in timing_points_arr:
             time_split = time.split(",")
 
@@ -74,7 +72,9 @@ class OsuFileGenerator:
             else:
                 inherited_timings_points_arr.append(time)
 
-        uninherited_timings = [int(time.split(",")[0]) for time in uninherited_timings_points_arr]
+        # print(convert_ms_to_osu_time(start_time))
+
+        uninherited_timings = [int(float(time.split(",")[0])) for time in uninherited_timings_points_arr]
         uninherited_timings_range_start_index = bisect.bisect_right(uninherited_timings, start_time) - 1
         uninherited_timings_range_end_index = bisect.bisect_right(uninherited_timings, end_time) - 1
 
@@ -83,7 +83,7 @@ class OsuFileGenerator:
         if uninherited_timings_range_end_index == -1:
             uninherited_timings_range_end_index = 0
 
-        inherited_timings = [int(time.split(",")[0]) for time in inherited_timings_points_arr]
+        inherited_timings = [int(float(time.split(",")[0])) for time in inherited_timings_points_arr]
         inherited_timings_range_start_index = bisect.bisect_right(inherited_timings, start_time) - 1
         inherited_timings_range_end_index = bisect.bisect_right(inherited_timings, end_time) - 1
 
@@ -95,9 +95,9 @@ class OsuFileGenerator:
         timings = []
         for i in range(uninherited_timings_range_start_index, uninherited_timings_range_end_index + 1):
             cur = uninherited_timings_points_arr[i].split(",")
-            cur_time = int(cur[0])
+            cur_time = int(float(cur[0]))
 
-            if i == uninherited_timings_range_start_index and int(cur[0]) < start_time:
+            if i == uninherited_timings_range_start_index and cur_time < start_time:
                 cur_time = offset + fade_in_start_time
             else:
                 cur_time = (offset + fade_in_start_time) + (cur_time - start_time)
@@ -106,9 +106,9 @@ class OsuFileGenerator:
             timings.append(",".join(cur))
         for i in range(inherited_timings_range_start_index, inherited_timings_range_end_index + 1):
             cur = inherited_timings_points_arr[i].split(",")
-            cur_time = int(cur[0])
+            cur_time = int(float(cur[0]))
 
-            if i == inherited_timings_range_start_index and int(cur[0]) < start_time:
+            if i == inherited_timings_range_start_index and cur_time < start_time:
                 cur_time = offset + fade_in_start_time
             else:
                 cur_time = (offset + fade_in_start_time) + (cur_time - start_time)
@@ -148,12 +148,10 @@ class OsuFileGenerator:
                 # spinner object
                 spinner_duration = int(cur_hitobject_split[5]) - int(cur_hitobject_split[2])
 
-                # cur_hitobject_split[2] = str(int(cur_hitobject_split[2]) + offset - test + fade_in_start_time)
                 cur_hitobject_split[2] = str((offset + fade_in_start_time) + (int(cur_hitobject_split[2]) - start_time))
                 cur_hitobject_split[5] = str(int(cur_hitobject_split[2]) + spinner_duration)
             else:
                 # slider or hitcircle object
-                # cur_hitobject_split[2] = str(int(cur_hitobject_split[2]) + offset - test + fade_in_start_time)
                 cur_hitobject_split[2] = str((offset + fade_in_start_time) + (int(cur_hitobject_split[2]) - start_time))
 
             cur_hitobject = ",".join(cur_hitobject_split)
@@ -161,7 +159,7 @@ class OsuFileGenerator:
             self.file_contents_json["HitObjects"].append(cur_hitobject)
 
     def export(self):
-        with open(f"testdan/final_{self.diff_name}.osu", 'w', encoding='utf-8') as osu_file:
+        with open(f"generated/{self.set_title}/{self.diff_name}.osu", 'w', encoding='utf-8') as osu_file:
             osu_file.write('osu file format v14\n\n')
 
             for section, content in self.file_contents_json.items():

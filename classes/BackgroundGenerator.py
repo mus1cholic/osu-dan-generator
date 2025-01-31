@@ -1,9 +1,9 @@
 from PIL import Image, ImageDraw, ImageFont
-import colorsys
 
 class BackgroundGenerator:
-    def __init__(self, diff_name, symbol, beatmaps):
+    def __init__(self, diff_name, set_title, symbol, beatmaps):
         self.diff_name = diff_name
+        self.set_title = set_title
         self.symbol = symbol
         self.beatmaps = beatmaps
 
@@ -63,4 +63,4 @@ class BackgroundGenerator:
 
         self.stitch_symbol(combined_bgs, stitched_width, stitched_height)
 
-        combined_bgs.save(f"testdan/bg_{self.diff_name}.png")
+        combined_bgs.save(f"generated/{self.set_title}/bg_{self.diff_name}.png")

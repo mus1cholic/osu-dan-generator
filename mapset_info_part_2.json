@@ -1,0 +1,152 @@
+[
+    {
+        "diff_name": "6th Dan",
+        "symbol": "6",
+        "circle_size": "4.0",
+        "approach_rate": "9.5",
+        "overall_difficulty": "8.7",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/323059 DragonForce - Defenders/DragonForce - Defenders (Spaghetti) [Legend].osu",
+                "start_time": "03:33:759",
+                "end_time": "05:42:917"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/416949 kamome sano - __emotional_/kamome sano - emotional (Naitoshi) [Limerence].osu",
+                "start_time": "03:30:526",
+                "end_time": "04:58:802"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/28751 07th Expansion - rog-unlimitation/07th Expansion - rog-unlimitation (AngelHoney) [AngelHoney].osu",
+                "start_time": "00:22:198",
+                "end_time": "01:41:698"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/118768 xi - Akasha/xi - Akasha (Jemmmmy) [Extreme].osu",
+                "start_time": "02:19:846",
+                "end_time": "04:14:657"
+            }
+        ]
+    },
+    {
+        "diff_name": "7th Dan",
+        "symbol": "7",
+        "circle_size": "4.0",
+        "approach_rate": "9.6",
+        "overall_difficulty": "9.0",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/1016145 Victorius - Twilight Skies/Victorius - Twilight Skies (xChorse) [Born to Conquer the Universe].osu",
+                "start_time": "02:19:138",
+                "end_time": "03:44:471"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/1878532 SB_YUNE - Dread of the grave -More fear-/SB_YUNE - Dread of the grave -More fear- (Luscent) [Insane 1.3x (203bpm) AR10 OD9.3].osu",
+                "start_time": "00:00:228",
+                "end_time": "01:53:837"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/22276 Dark PHOENiX - Taketori Hishou/Dark PHOENiX - Taketori Hishou (KanbeKotori) [Extra 1.25x (240bpm) AR10 OD9.3].osu",
+                "start_time": "01:26:779",
+                "end_time": "02:42:779"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/272333 orangentle _ Yu_Asahina - HAELEQUIN (Extended ver)/orangentle  Yu_Asahina - HAELEQUIN (Extended ver.) (RLC) [Another 1.15x (198bpm) AR10 OD9.3].osu",
+                "start_time": "02:59:596",
+                "end_time": "04:19:981"
+            }
+        ]
+    },
+    {
+        "diff_name": "8th Dan",
+        "symbol": "8",
+        "circle_size": "4.0",
+        "approach_rate": "9.6",
+        "overall_difficulty": "9.0",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/107475 OSTER project - Capriccio of My Mind/OSTER project - Capriccio of My Mind (7odoa) [Extra AR10].osu",
+                "start_time": "02:38:996",
+                "end_time": "03:49:196"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/688877 Kucchi vs Akki - Yakumo JOINT STRUGGLE/Kucchi vs Akki - Yakumo JOINT STRUGGLE (Muya) [SUKIMA].osu",
+                "start_time": "00:01:290",
+                "end_time": "02:05:701"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/100682 Black Raison d'etre - INSIDE IDENTITY/Black Raison d'etre - INSIDE IDENTITY (Natsu) [Insane 1.35x (251bpm) OD9.3].osu",
+                "start_time": "01:42:834",
+                "end_time": "03:08:796"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/455109 LeaF - Paraclete/LeaF - Paraclete (Kroytz) [Extra].osu",
+                "start_time": "00:18:327",
+                "end_time": "02:18:899"
+            }
+        ]
+    },
+    {
+        "diff_name": "9th Dan",
+        "symbol": "9",
+        "circle_size": "4.0",
+        "approach_rate": "9.7",
+        "overall_difficulty": "9.0",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/xi - Blue Zenith 2/xi - Blue Zenith (Asphyxia) [FOUR DIMENSIONS].osu",
+                "start_time": "01:53:834",
+                "end_time": "04:02:234"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/789544 Andromedik - Invasion/Andromedik - Invasion (Mirash) [Collab Extra 1.2x (209bpm) AR10 OD9.3].osu",
+                "start_time": "00:58:027",
+                "end_time": "03:06:763"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/153776 yuikonnu & ayaponzu- - Super Nuko World/yuikonnu & ayaponzu - Super Nuko World (AllStar12) [Guy's Extra 1.3x (247bpm) AR10 OD9.3].osu",
+                "start_time": "01:15:892",
+                "end_time": "02:47:713"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/34348 xi - Ascension to Heaven/xi - Ascension to Heaven (Shiirn) [Death].osu",
+                "start_time": "01:21:629",
+                "end_time": "02:34:955"
+            }
+        ]
+    },
+    {
+        "diff_name": "10th Dan",
+        "symbol": "10",
+        "circle_size": "4.0",
+        "approach_rate": "9.7",
+        "overall_difficulty": "9.0",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/1885198 TEARS OF TRAGEDY - Epitaph/TEARS OF TRAGEDY - Epitaph (PixelGlory) [Elegy 1.05x (201bpm) CS4 OD9.3].osu",
+                "start_time": "04:06:055",
+                "end_time": "05:17:858"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/849903 kamome sano - tarte tatin/kamome sano - tarte tatin (-PC) [reine des reinettes].osu",
+                "start_time": "00:00:000",
+                "end_time": "01:53:684"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/20949 Demetori - Wind God Girl/Demetori - Wind God Girl (lkp) [Extra 1.3x (260bpm) AR10 OD9.3].osu",
+                "start_time": "02:27:603",
+                "end_time": "04:09:372"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/128931 Feint - Tower Of Heaven (You Are Slaves)/Feint - Tower Of Heaven (You Are Slaves) (eLy) [Extra 1.35x (236bpm) OD9.3].osu",
+                "start_time": "00:00:225",
+                "end_time": "02:04:225"
+            }
+        ]
+    }
+]

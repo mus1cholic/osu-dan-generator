@@ -1,6 +1,6 @@
 [
     {
-        "diff_name": "ALPHA DAN",
+        "diff_name": "ALPHA Dan",
         "symbol": "α",
         "circle_size": "4.0",
         "approach_rate": "9.8",
@@ -30,7 +30,7 @@
         ]
     },
     {
-        "diff_name": "BETA DAN",
+        "diff_name": "BETA Dan",
         "symbol": "β",
         "circle_size": "4.0",
         "approach_rate": "9.8",
@@ -60,9 +60,9 @@
         ]
     },
     {
-        "diff_name": "GAMMA DAN",
+        "diff_name": "GAMMA Dan",
         "symbol": "γ",
-        "circle_size": "4.0",
+        "circle_size": "3.97",
         "approach_rate": "9.8",
         "overall_difficulty": "9.0",
         "hp": "1.0",
@@ -90,7 +90,7 @@
         ]
     },
     {
-        "diff_name": "DELTA DAN",
+        "diff_name": "DELTA Dan",
         "symbol": "δ",
         "circle_size": "4.0",
         "approach_rate": "10",
@@ -103,9 +103,9 @@
                 "end_time": "01:45:563"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/Halozy+-+Heart+of+Night/Halozy - Heart of Night (Chaoslitz) [Life of Loneliness 2x (256bpm) AR10 OD10].osu",
-                "start_time": "01:12:310",
-                "end_time": "02:43:130"
+                "osu_file_path": "D:/osu!/Songs/Halozy+-+Heart+of+Night/Halozy - Heart of Night (Chaoslitz) [Life of Loneliness 1.95x (250bpm) CS4 AR10 OD9.3].osu",
+                "start_time": "01:14:164",
+                "end_time": "02:47:313"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/490121 Rings Of Saturn - Senseless Massacre/Rings of Saturn - Senseless Massacre (Mazzerin) [LMT's Expert 1.1x (297bpm) CS4 AR10 OD9].osu",
@@ -113,14 +113,14 @@
                 "end_time": "02:03:868"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/1929702 DJ SHARPNEL - CYBER INDUCTANCE/DJ SHARPNEL - CYBER INDUCTANCE (jellium) [1.3x].osu",
-                "start_time": "01:57:260",
-                "end_time": "03:43:462"
+                "osu_file_path": "D:/osu!/Songs/1929702 DJ SHARPNEL - CYBER INDUCTANCE/DJ SHARPNEL - CYBER INDUCTANCE (jellium) [1.0x 1.25x (239bpm) AR10 OD9.3].osu",
+                "start_time": "02:01:961",
+                "end_time": "03:52:411"
             }
         ]
     },
     {
-        "diff_name": "EPSILON DAN",
+        "diff_name": "EPSILON Dan",
         "symbol": "ε",
         "circle_size": "4.0",
         "approach_rate": "10",
@@ -138,9 +138,9 @@
                 "end_time": "02:27:702"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/48979 Hatsune Miku - Mythologia's End/Hatsune Miku - Mythologia's End (val0108) [Myth0108ia 1.55x (302bpm) AR10 OD9.3].osu",
-                "start_time": "01:07:677",
-                "end_time": "03:00:431"
+                "osu_file_path": "D:/osu!/Songs/48979 Hatsune Miku - Mythologia's End/Hatsune Miku - Mythologia's End (val0108) [Myth0108ia 1.5x (292bpm) AR10 OD9.3].osu",
+                "start_time": "01:09:933",
+                "end_time": "03:06:445"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/991300 Fleshgod Apocalypse - The Deceit/Fleshgod Apocalypse - The Deceit (Mazzerin) [Agony 1.05x (263bpm) CS4 AR10 OD10].osu",
@@ -150,7 +150,7 @@
         ]
     },
     {
-        "diff_name": "ZETA DAN",
+        "diff_name": "ZETA Dan",
         "symbol": "ζ",
         "circle_size": "4.0",
         "approach_rate": "10",
@@ -163,9 +163,9 @@
                 "end_time": "07:35:458"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/71856 yu_tokiwadjw - murmur twins/yu_tokiwa.djw - murmur twins (Muya) [Another 1.65x (287bpm) CS4 AR10 OD9].osu",
-                "start_time": "00:01:485",
-                "end_time": "01:08:679"
+                "osu_file_path": "D:/osu!/Songs/71856 yu_tokiwadjw - murmur twins/yu_tokiwa.djw - murmur twins (Muya) [Another 1.6x (278bpm) CS4 AR10 OD9.3].osu",
+                "start_time": "00:01:530",
+                "end_time": "01:10:718"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/672013 Silvia - Vertex Delta/Silvia - Vertex Gamma (mithew) [GAMMA 1.1x (330bpm) AR10 OD9].osu",
@@ -180,7 +180,7 @@
         ]
     },
     {
-        "diff_name": "ETA DAN",
+        "diff_name": "ETA Dan",
         "symbol": "η",
         "circle_size": "4.0",
         "approach_rate": "10",
