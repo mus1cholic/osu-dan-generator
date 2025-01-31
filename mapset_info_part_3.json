@@ -3,7 +3,7 @@
         "diff_name": "ALPHA Dan",
         "symbol": "α",
         "circle_size": "4.0",
-        "approach_rate": "9.8",
+        "approach_rate": "10",
         "overall_difficulty": "9.0",
         "hp": "1.0",
         "beatmaps": [
@@ -33,7 +33,7 @@
         "diff_name": "BETA Dan",
         "symbol": "β",
         "circle_size": "4.0",
-        "approach_rate": "9.8",
+        "approach_rate": "10",
         "overall_difficulty": "9.0",
         "hp": "1.0",
         "beatmaps": [
@@ -53,9 +53,9 @@
                 "end_time": "02:35:224"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/1286450 DJ SHARPNEL - FUTURE DOMINATORS/DJ SHARPNEL - FUTURE DOMINATORS (-Tynamo) [yamate 1.1x (231bpm) OD9.3].osu",
-                "start_time": "02:57:647",
-                "end_time": "04:47:620"
+                "osu_file_path": "D:/osu!/Songs/1286450 DJ SHARPNEL - FUTURE DOMINATORS/DJ SHARPNEL - FUTURE DOMINATORS (-Tynamo) [yamate 1.05x (221bpm) AR10 OD9.3].osu",
+                "start_time": "03:06:106",
+                "end_time": "05:01:316"
             }
         ]
     },
@@ -63,7 +63,7 @@
         "diff_name": "GAMMA Dan",
         "symbol": "γ",
         "circle_size": "3.97",
-        "approach_rate": "9.8",
+        "approach_rate": "10",
         "overall_difficulty": "9.0",
         "hp": "1.0",
         "beatmaps": [

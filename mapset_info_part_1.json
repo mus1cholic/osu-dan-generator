@@ -1,0 +1,32 @@
+[
+    {
+        "diff_name": "2nd Dan",
+        "symbol": "2",
+        "circle_size": "4.0",
+        "approach_rate": "9.2",
+        "overall_difficulty": "8",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/1016145 Victorius - Twilight Skies/Victorius - Twilight Skies (xChorse) [Born to Conquer the Universe].osu",
+                "start_time": "02:19:138",
+                "end_time": "03:44:471"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/416949 kamome sano - __emotional_/kamome sano - emotional (Naitoshi) [Limerence].osu",
+                "start_time": "03:30:526",
+                "end_time": "04:58:802"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/28751 07th Expansion - rog-unlimitation/07th Expansion - rog-unlimitation (AngelHoney) [AngelHoney].osu",
+                "start_time": "00:22:198",
+                "end_time": "01:41:698"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/118768 xi - Akasha/xi - Akasha (Jemmmmy) [Extreme].osu",
+                "start_time": "02:19:846",
+                "end_time": "04:14:657"
+            }
+        ]
+    },
+]
