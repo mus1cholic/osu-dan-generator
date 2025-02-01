@@ -1,32 +1,152 @@
 [
     {
-        "diff_name": "2nd Dan",
-        "symbol": "2",
+        "diff_name": "1st Dan",
+        "symbol": "1",
         "circle_size": "4.0",
-        "approach_rate": "9.2",
-        "overall_difficulty": "8",
+        "approach_rate": "9",
+        "overall_difficulty": "7.5",
         "hp": "1.0",
         "beatmaps": [
             {
-                "osu_file_path": "D:/osu!/Songs/1016145 Victorius - Twilight Skies/Victorius - Twilight Skies (xChorse) [Born to Conquer the Universe].osu",
-                "start_time": "02:19:138",
-                "end_time": "03:44:471"
+                "osu_file_path": "D:/osu!/Songs/891345 HyuN - Infinity Heaven/HyuN - Infinity Heaven (Niva) [Mirash's Insane].osu",
+                "start_time": "00:23:225",
+                "end_time": "02:03:725"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/416949 kamome sano - __emotional_/kamome sano - emotional (Naitoshi) [Limerence].osu",
-                "start_time": "03:30:526",
-                "end_time": "04:58:802"
+                "osu_file_path": "D:/osu!/Songs/1746664 Kotoha - God-ish/Kotoha - God-ish (IOException) [Insane].osu",
+                "start_time": "00:07:581",
+                "end_time": "01:32:088"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/28751 07th Expansion - rog-unlimitation/07th Expansion - rog-unlimitation (AngelHoney) [AngelHoney].osu",
-                "start_time": "00:22:198",
-                "end_time": "01:41:698"
+                "osu_file_path": "D:/osu!/Songs/72740 MuryokuP - Catastrophe/MuryokuP - Catastrophe (meiikyuu) [Cataclysm].osu",
+                "start_time": "00:19:330",
+                "end_time": "02:14:530"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/118768 xi - Akasha/xi - Akasha (Jemmmmy) [Extreme].osu",
+                "osu_file_path": "D:/osu!/Songs/1312343 Kijibato - wWWW feat Hoshimiya Toto/Kijibato - wWWW feat. Hoshimiya Toto (Elcheer) [Utopia].osu",
                 "start_time": "02:19:846",
                 "end_time": "04:14:657"
             }
         ]
     },
+    {
+        "diff_name": "2nd Dan",
+        "symbol": "2",
+        "circle_size": "4.0",
+        "approach_rate": "9",
+        "overall_difficulty": "8",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/323329 positive MAD-crew - Mynarco Addiction/positive MAD-crew - Mynarco Addiction (Okoratu) [Hyper].osu",
+                "start_time": "01:50:145",
+                "end_time": "03:25:614"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/144171 Nekomata Master - Far east nightbird (kors k Remix)/Nekomata Master - Far east nightbird (kors k Remix) (jonathanlfj) [RLC's Extra].osu",
+                "start_time": "01:07:376",
+                "end_time": "02:24:691"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/1248526 BAND-MAID - DICE/BAND-MAID - DICE (Lasse) [INSANE. 1.05x (189bpm) AR10 OD9.3].osu",
+                "start_time": "00:52:723",
+                "end_time": "02:42:564"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/1842375 Sakaue Nachi - Crazy Hot/Sakaue Nachi - Crazy Hot (-Syncro) [Satellite's Lunatic].osu",
+                "start_time": "01:01:796",
+                "end_time": "03:01:796"
+            }
+        ]
+    },
+    {
+        "diff_name": "3rd Dan",
+        "symbol": "3",
+        "circle_size": "4.0",
+        "approach_rate": "9",
+        "overall_difficulty": "8",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/339708 Rameses B - Transcend 2/Rameses B - Transcend (Milan-) [Chillout].osu",
+                "start_time": "01:05:178",
+                "end_time": "02:18:589"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/339615 zts - dreamenddischarger/zts - dreamenddischarger (EvilElvis) [Love Letter 1.1x (154bpm) AR10 OD9.3].osu",
+                "start_time": "01:33:225",
+                "end_time": "03:02:446"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/21928 Humanoid - MENDES/Humanoid - MENDES (yeahyeahyeahhh) [Another 1.15x (193bpm) AR10 OD9.3].osu",
+                "start_time": "00:00:282",
+                "end_time": "01:34:691"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/1616029 -45 - System Sun/-45 - System Sun (Lasse) [Insane 1.2x (182bpm) AR10 OD9.3].osu",
+                "start_time": "01:19:990",
+                "end_time": "03:38:937"
+            }
+        ]
+    },
+    {
+        "diff_name": "4th Dan",
+        "symbol": "4",
+        "circle_size": "4.0",
+        "approach_rate": "9",
+        "overall_difficulty": "8.3",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/44967 Memme - BSPower Explosion/Memme - BSPower Explosion (AngelHoney) [Extra].osu",
+                "start_time": "00:37:872",
+                "end_time": "02:17:538"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/140526 Infected Mushroom - Never Mind/Infected Mushroom - Never Mind (SuperMICrophone) [Disregard].osu",
+                "start_time": "00:16:644",
+                "end_time": "01:31:413"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/359890 goreshit - burn this moment into the retina of my eye/goreshit - burn this moment into the retina of my eye (grumd) [insane].osu",
+                "start_time": "02:23:898",
+                "end_time": "03:54:451"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/514938 goreshit - there are no angels here/goreshit - there are no angels here. (viptwo) [archangeloi.].osu",
+                "start_time": "02:28:904",
+                "end_time": "04:11:577"
+            }
+        ]
+    },
+    {
+        "diff_name": "5th Dan",
+        "symbol": "5",
+        "circle_size": "4.0",
+        "approach_rate": "9",
+        "overall_difficulty": "8.3",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/323059 DragonForce - Defenders/DragonForce - Defenders (Spaghetti) [Legend].osu",
+                "start_time": "03:33:759",
+                "end_time": "05:42:917"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/51972 goreshit - o'er the flood/goreshit - o'er the flood (grumd) [The Flood Beneath 1.1x (213bpm) AR10 OD9.3].osu",
+                "start_time": "02:21:195",
+                "end_time": "03:51:167"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/347719 Demetori - Kuuchuu ni Shizumu Kishinjou ~ Counter-Clock World/Demetori - Kuuchuu ni Shizumu Kishinjou ~ Counter-Clock World (jonathanlfj) [Lunatic Collab 1.2x (222bpm) AR10 OD9.3].osu",
+                "start_time": "02:58:390",
+                "end_time": "04:56:362"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/859515 K A Z M A S A - Bon Appetit S (Oldskool HappyHardcore Remix) (Short Ver)/K A Z M A S A - Bon Appetit S (Oldskool HappyHardcore Remix) (Short Ver.) (BarkingMadDog) [blend s (180 bpm)].osu",
+                "start_time": "01:41:373",
+                "end_time": "03:12:0257"
+            }
+        ]
+    }
 ]

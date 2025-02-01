@@ -1,4 +1,5 @@
 import bisect
+import copy
 
 class OsuFileGenerator:
     def __init__(self, diff_name, set_title, set_id, circle_size, approach_rate, overall_difficulty, hp):
@@ -61,8 +62,8 @@ class OsuFileGenerator:
     def add_timing_points(self, timing_points_arr: list[str], slider_multiplier: float, start_time: int, end_time: int, fade_in_start_time: int, offset: int):
         fade_in_start_time = start_time - fade_in_start_time
         
-        uninherited_timings_points_arr = []
-        inherited_timings_points_arr = []
+        uninherited_timings_points_arr: list[str] = []
+        inherited_timings_points_arr: list[str] = []
 
         for time in timing_points_arr:
             time_split = time.split(",")
@@ -71,8 +72,6 @@ class OsuFileGenerator:
                 uninherited_timings_points_arr.append(time)
             else:
                 inherited_timings_points_arr.append(time)
-
-        # print(convert_ms_to_osu_time(start_time))
 
         uninherited_timings = [int(float(time.split(",")[0])) for time in uninherited_timings_points_arr]
         uninherited_timings_range_start_index = bisect.bisect_right(uninherited_timings, start_time) - 1
@@ -92,6 +91,12 @@ class OsuFileGenerator:
         if inherited_timings_range_end_index == -1:
             inherited_timings_range_end_index = 0
 
+        # if in the original map, there is a green line after a red line, and that green line is before the first object,
+        # we keep that green line and move it to the first object in the new map. otherwise, we remove the green line
+        if not (inherited_timings[inherited_timings_range_start_index] > uninherited_timings[uninherited_timings_range_start_index] \
+                and inherited_timings[inherited_timings_range_start_index] < start_time):
+            inherited_timings_range_start_index += 1
+
         timings = []
         for i in range(uninherited_timings_range_start_index, uninherited_timings_range_end_index + 1):
             cur = uninherited_timings_points_arr[i].split(",")
@@ -104,6 +109,16 @@ class OsuFileGenerator:
 
             cur[0] = str(cur_time)
             timings.append(",".join(cur))
+
+            # add a timing at the start of the first note that adjusts to slider velocity
+            # except if there is already a green line at the same timestamp
+            find_same_inherited_timing_index = bisect.bisect_right(inherited_timings, cur_time) - 1
+            if (inherited_timings[find_same_inherited_timing_index] != cur_time):
+                insert_new_timing = copy.deepcopy(cur)
+                insert_new_timing[1] = "-100"
+                insert_new_timing[6] = "0"
+                timings.append(",".join(insert_new_timing))
+
         for i in range(inherited_timings_range_start_index, inherited_timings_range_end_index + 1):
             cur = inherited_timings_points_arr[i].split(",")
             cur_time = int(float(cur[0]))

@@ -1,13 +1,18 @@
 {
     "mapsets": [
         {
+            "filename": "mapset_info_part_1.json",
+            "title": "Osu!std Tapping Dan Course - Part 1",
+            "beatmap_set_id": "-1"
+        },
+        {
             "filename": "mapset_info_part_2.json",
-            "title": "Osu!std Tapping Dan - Part 2",
+            "title": "Osu!std Tapping Dan Course - Part 2",
             "beatmap_set_id": "2315888"
         },
         {
             "filename": "mapset_info_part_3.json",
-            "title": "Osu!std Tapping Dan - Part 3",
+            "title": "Osu!std Tapping Dan Course - Part 3",
             "beatmap_set_id": "2315697"
         }
     ]
