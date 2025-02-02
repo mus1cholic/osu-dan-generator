@@ -62,7 +62,7 @@ class OsuFileGenerator:
         }
 
     def add_timing_points(self, timing_points_arr: list[str], slider_multiplier: float, start_time: int, end_time: int, fade_in_start_time: int, offset: int):
-        fade_in_start_time = start_time - fade_in_start_time
+        fade_in_duration = start_time - fade_in_start_time
         
         # uninherited is red line, inherited is green line
         uninherited_timings_points_arr: list[str] = []
@@ -76,25 +76,70 @@ class OsuFileGenerator:
             else:
                 inherited_timings_points_arr.append(time)
 
-        uninherited_timings = [int(float(time.split(",")[0])) for time in uninherited_timings_points_arr]
-        uninherited_timings_range_start_index = bisect.bisect_right(uninherited_timings, start_time) - 1
-        uninherited_timings_range_end_index = bisect.bisect_right(uninherited_timings, end_time) - 1
+        # this weird and complicated logic has to be done because the osu editor occasionally moves
+        # objects and timings by a few ms each. that's why AImod also exists. very annoying workaround,
+        # but must be done
 
-        if uninherited_timings_range_start_index == -1:
-            uninherited_timings_range_start_index = 0
-        if uninherited_timings_range_end_index == -1:
-            uninherited_timings_range_end_index = 0
+        uninherited_timings = [int(float(time.split(",")[0])) for time in uninherited_timings_points_arr]
+        uninherited_timings_possible_start_right_index = bisect.bisect_right(uninherited_timings, start_time)
+        uninherited_timings_possible_start_left_index = uninherited_timings_possible_start_right_index - 1
+
+        if uninherited_timings_possible_start_right_index == len(uninherited_timings):
+            uninherited_timings_possible_start_right_index -= 1
+        elif uninherited_timings_possible_start_left_index < 0:
+            uninherited_timings_possible_start_left_index += 1
+
+        if abs(uninherited_timings[uninherited_timings_possible_start_left_index] - start_time) \
+            < abs(uninherited_timings[uninherited_timings_possible_start_right_index] - start_time):
+            uninherited_timings_range_start_index = uninherited_timings_possible_start_left_index
+        else:
+            uninherited_timings_range_start_index = uninherited_timings_possible_start_right_index
+
+        uninherited_timings_possible_end_right_index = bisect.bisect_right(uninherited_timings, end_time)
+        uninherited_timings_possible_end_left_index = uninherited_timings_possible_end_right_index - 1
+
+        if uninherited_timings_possible_end_right_index == len(uninherited_timings):
+            uninherited_timings_possible_end_right_index -= 1
+        elif uninherited_timings_possible_end_left_index < 0:
+            uninherited_timings_possible_end_left_index += 1
+
+        if abs(uninherited_timings[uninherited_timings_possible_end_left_index] - end_time) \
+            < abs(uninherited_timings[uninherited_timings_possible_end_right_index] - end_time):
+            uninherited_timings_range_end_index = uninherited_timings_possible_end_left_index
+        else:
+            uninherited_timings_range_end_index = uninherited_timings_possible_end_right_index
+
 
         inherited_timings = [int(float(time.split(",")[0])) for time in inherited_timings_points_arr]
-        inherited_timings_range_start_index = bisect.bisect_right(inherited_timings, start_time) - 1
-        inherited_timings_range_end_index = bisect.bisect_right(inherited_timings, end_time) - 1
+        inherited_timings_possible_start_right_index = bisect.bisect_right(inherited_timings, start_time)
+        inherited_timings_possible_start_left_index = inherited_timings_possible_start_right_index - 1
 
-        if inherited_timings_range_start_index == -1:
-            inherited_timings_range_start_index = 0
-        if inherited_timings_range_end_index == -1:
-            inherited_timings_range_end_index = 0
+        if inherited_timings_possible_start_right_index == len(inherited_timings):
+            inherited_timings_possible_start_right_index -= 1
+        elif inherited_timings_possible_start_left_index < 0:
+            inherited_timings_possible_start_left_index += 1
 
-        # if in the original map, there is an instance such that green <= red < start, we remove the green line.
+        if abs(inherited_timings[inherited_timings_possible_start_left_index] - start_time) \
+            < abs(inherited_timings[inherited_timings_possible_start_right_index] - start_time):
+            inherited_timings_range_start_index = inherited_timings_possible_start_left_index
+        else:
+            inherited_timings_range_start_index = inherited_timings_possible_start_right_index\
+            
+        inherited_timings_possible_end_right_index = bisect.bisect_right(inherited_timings, end_time)
+        inherited_timings_possible_end_left_index = inherited_timings_possible_end_right_index - 1        
+
+        if inherited_timings_possible_end_right_index == len(inherited_timings):
+            inherited_timings_possible_end_right_index -= 1
+        elif inherited_timings_possible_end_left_index < 0:
+            inherited_timings_possible_end_left_index += 1
+
+        if abs(inherited_timings[inherited_timings_possible_end_left_index] - end_time) \
+            < abs(inherited_timings[inherited_timings_possible_end_right_index] - end_time):
+            inherited_timings_range_end_index = inherited_timings_possible_end_left_index
+        else:
+            inherited_timings_range_end_index = inherited_timings_possible_end_right_index        
+
+        # if in the original map, there is an instance such that green < red <= start, we remove the green line.
         # otherwise, we move that green line to the time of the first note
         if inherited_timings[inherited_timings_range_start_index] < uninherited_timings[uninherited_timings_range_start_index] \
             and uninherited_timings[uninherited_timings_range_start_index] <= start_time:
@@ -107,9 +152,9 @@ class OsuFileGenerator:
             cur_time = int(float(cur[0]))
 
             if i == uninherited_timings_range_start_index and cur_time < start_time:
-                cur_time = offset + fade_in_start_time
+                cur_time = offset + fade_in_duration
             else:
-                cur_time = (offset + fade_in_start_time) + (cur_time - start_time)
+                cur_time = (offset + fade_in_duration) + (cur_time - start_time)
 
             cur[0] = str(cur_time)
             timings.append(",".join(cur))
@@ -119,9 +164,9 @@ class OsuFileGenerator:
             cur_time = int(float(cur[0]))
 
             if i == inherited_timings_range_start_index and cur_time < start_time:
-                cur_time = offset + fade_in_start_time
+                cur_time = offset + fade_in_duration
             else:
-                cur_time = (offset + fade_in_start_time) + (cur_time - start_time)
+                cur_time = (offset + fade_in_duration) + (cur_time - start_time)
 
             cur[0] = str(cur_time)
             timings.append(",".join(cur))
@@ -161,18 +206,44 @@ class OsuFileGenerator:
             cur_timing_point = ",".join(cur_timing_point)
             self.file_contents_json["TimingPoints"].append(cur_timing_point)
 
+        # unkiai the final timing point to make sure there is no kiai during breaks
+        last_timing_point = self.file_contents_json["TimingPoints"][-1].split(",")
+        last_timing_point[7] = str(int(last_timing_point[7]) & 1110)
+
+        last_timing_point = ",".join(last_timing_point)
+        self.file_contents_json["TimingPoints"][-1] = last_timing_point
+
     def add_hit_objects(self, hit_objects_arr: list[str], start_time: int, end_time: int, fade_in_start_time: int, offset: int):
-        fade_in_start_time = start_time - fade_in_start_time
+        fade_in_duration = start_time - fade_in_start_time
         
         hitobjects = [int(hitobject.split(",")[2]) for hitobject in hit_objects_arr]
+        hitobjects_possible_start_right_index = bisect.bisect_right(hitobjects, start_time)
+        hitobjects_possible_start_left_index = hitobjects_possible_start_right_index - 1
 
-        hitobjects_range_start_index = bisect.bisect_left(hitobjects, start_time)
-        hitobjects_range_end_index = bisect.bisect_left(hitobjects, end_time)
+        if hitobjects_possible_start_right_index == len(hitobjects):
+            hitobjects_possible_start_right_index -= 1
+        elif hitobjects_possible_start_left_index < 0:
+            hitobjects_possible_start_left_index += 1
 
-        if hitobjects_range_start_index == -1:
-            hitobjects_range_start_index = 0
-        if hitobjects_range_end_index == len(hitobjects):
-            hitobjects_range_end_index -= 1
+        if abs(hitobjects[hitobjects_possible_start_left_index] - start_time) \
+            < abs(hitobjects[hitobjects_possible_start_right_index] - start_time):
+            hitobjects_range_start_index = hitobjects_possible_start_left_index
+        else:
+            hitobjects_range_start_index = hitobjects_possible_start_right_index
+
+        hitobjects_possible_end_right_index = bisect.bisect_right(hitobjects, end_time)
+        hitobjects_possible_end_left_index = hitobjects_possible_end_right_index - 1
+
+        if hitobjects_possible_end_right_index == len(hitobjects):
+            hitobjects_possible_end_right_index -= 1
+        elif hitobjects_possible_end_left_index < 0:
+            hitobjects_possible_end_left_index += 1
+
+        if abs(hitobjects[hitobjects_possible_end_left_index] - end_time) \
+            < abs(hitobjects[hitobjects_possible_end_right_index] - end_time):
+            hitobjects_range_end_index = hitobjects_possible_end_left_index
+        else:
+            hitobjects_range_end_index = hitobjects_possible_end_right_index
 
         for i in range(hitobjects_range_start_index, hitobjects_range_end_index + 1):
             cur_hitobject_split = hit_objects_arr[i].split(",")
@@ -180,18 +251,17 @@ class OsuFileGenerator:
                 # spinner object
                 spinner_duration = int(cur_hitobject_split[5]) - int(cur_hitobject_split[2])
 
-                cur_hitobject_split[2] = str((offset + fade_in_start_time) + (int(cur_hitobject_split[2]) - start_time))
+                cur_hitobject_split[2] = str((offset + fade_in_duration) + (int(cur_hitobject_split[2]) - start_time))
                 cur_hitobject_split[5] = str(int(cur_hitobject_split[2]) + spinner_duration)
             else:
                 # slider or hitcircle object
-                cur_hitobject_split[2] = str((offset + fade_in_start_time) + (int(cur_hitobject_split[2]) - start_time))
+                cur_hitobject_split[2] = str((offset + fade_in_duration) + (int(cur_hitobject_split[2]) - start_time))
 
                 # make sure every new map starts with a new combo
                 if i == hitobjects_range_start_index:
                     cur_hitobject_split[3] = str(int(cur_hitobject_split[3]) | (1 << 2))
 
             cur_hitobject = ",".join(cur_hitobject_split)
-
             self.file_contents_json["HitObjects"].append(cur_hitobject)
 
     def export(self):
