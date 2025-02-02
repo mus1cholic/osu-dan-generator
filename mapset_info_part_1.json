@@ -24,8 +24,8 @@
             },
             {
                 "osu_file_path": "D:/osu!/Songs/1312343 Kijibato - wWWW feat Hoshimiya Toto/Kijibato - wWWW feat. Hoshimiya Toto (Elcheer) [Utopia].osu",
-                "start_time": "02:19:846",
-                "end_time": "04:14:657"
+                "start_time": "02:27:083",
+                "end_time": "03:33:228"
             }
         ]
     },
@@ -62,8 +62,8 @@
     {
         "diff_name": "3rd Dan",
         "symbol": "3",
-        "circle_size": "4.0",
-        "approach_rate": "9",
+        "circle_size": "3.8",
+        "approach_rate": "9.2",
         "overall_difficulty": "8",
         "hp": "1.0",
         "beatmaps": [
@@ -83,17 +83,17 @@
                 "end_time": "01:34:691"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/1616029 -45 - System Sun/-45 - System Sun (Lasse) [Insane 1.2x (182bpm) AR10 OD9.3].osu",
-                "start_time": "01:19:990",
-                "end_time": "03:38:937"
+                "osu_file_path": "D:/osu!/Songs/1616029 -45 - System Sun/-45 - System Sun (Lasse) [Insane 1.1x (167bpm) AR10 OD9.3].osu",
+                "start_time": "01:38:555",
+                "end_time": "03:42:000"
             }
         ]
     },
     {
         "diff_name": "4th Dan",
         "symbol": "4",
-        "circle_size": "4.0",
-        "approach_rate": "9",
+        "circle_size": "4.03",
+        "approach_rate": "9.2",
         "overall_difficulty": "8.3",
         "hp": "1.0",
         "beatmaps": [
@@ -123,7 +123,7 @@
         "diff_name": "5th Dan",
         "symbol": "5",
         "circle_size": "4.0",
-        "approach_rate": "9",
+        "approach_rate": "9.3",
         "overall_difficulty": "8.3",
         "hp": "1.0",
         "beatmaps": [

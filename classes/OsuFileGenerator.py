@@ -1,6 +1,8 @@
 import bisect
 import copy
 
+from functools import cmp_to_key
+
 class OsuFileGenerator:
     def __init__(self, diff_name, set_title, set_id, circle_size, approach_rate, overall_difficulty, hp):
         self.diff_name = diff_name
@@ -44,7 +46,7 @@ class OsuFileGenerator:
                 "OverallDifficulty": overall_difficulty,
                 "ApproachRate": approach_rate,
                 "SliderMultiplier": "2.0",
-                "SliderTickRate": "2"
+                "SliderTickRate": "1"
             },
             "Events": [
                 f"0,0,\"bg_{diff_name}.png\",0,0"
@@ -62,6 +64,7 @@ class OsuFileGenerator:
     def add_timing_points(self, timing_points_arr: list[str], slider_multiplier: float, start_time: int, end_time: int, fade_in_start_time: int, offset: int):
         fade_in_start_time = start_time - fade_in_start_time
         
+        # uninherited is red line, inherited is green line
         uninherited_timings_points_arr: list[str] = []
         inherited_timings_points_arr: list[str] = []
 
@@ -93,11 +96,14 @@ class OsuFileGenerator:
 
         # if in the original map, there is a green line after a red line, and that green line is before the first object,
         # we keep that green line and move it to the first object in the new map. otherwise, we remove the green line
-        if not (inherited_timings[inherited_timings_range_start_index] > uninherited_timings[uninherited_timings_range_start_index] \
-                and inherited_timings[inherited_timings_range_start_index] < start_time):
+        # if inherited_timings[inherited_timings_range_start_index] <= uninherited_timings[uninherited_timings_range_start_index] \
+        #     or inherited_timings[inherited_timings_range_start_index] >= start_time:
+        if inherited_timings[inherited_timings_range_start_index] <= uninherited_timings[uninherited_timings_range_start_index] \
+            and uninherited_timings[uninherited_timings_range_start_index] < start_time:
             inherited_timings_range_start_index += 1
 
-        timings = []
+        timings: list[str] = []
+        
         for i in range(uninherited_timings_range_start_index, uninherited_timings_range_end_index + 1):
             cur = uninherited_timings_points_arr[i].split(",")
             cur_time = int(float(cur[0]))
@@ -109,15 +115,6 @@ class OsuFileGenerator:
 
             cur[0] = str(cur_time)
             timings.append(",".join(cur))
-
-            # add a timing at the start of the first note that adjusts to slider velocity
-            # except if there is already a green line at the same timestamp
-            find_same_inherited_timing_index = bisect.bisect_right(inherited_timings, cur_time) - 1
-            if (inherited_timings[find_same_inherited_timing_index] != cur_time):
-                insert_new_timing = copy.deepcopy(cur)
-                insert_new_timing[1] = "-100"
-                insert_new_timing[6] = "0"
-                timings.append(",".join(insert_new_timing))
 
         for i in range(inherited_timings_range_start_index, inherited_timings_range_end_index + 1):
             cur = inherited_timings_points_arr[i].split(",")
@@ -131,17 +128,39 @@ class OsuFileGenerator:
             cur[0] = str(cur_time)
             timings.append(",".join(cur))
 
-        timings.sort(key=lambda x: int(x.split(",")[0]))
+        def custom_cmp(timing1: str, timing2: str):
+            # put green lines before red lines 
+            timing1_split = timing1.split(",")
+            timing2_split = timing2.split(",")
+            if int(timing1_split[0]) < int(timing2_split[0]):
+                return -1
+            elif int(timing1_split[0]) > int(timing2_split[0]):
+                return 1
+            else:
+                return 1 if int(timing1_split[6]) == 1 else -1
+        timings.sort(key=cmp_to_key(custom_cmp))
 
         slider_velocity_adjust = slider_multiplier / 2.0
 
-        for timing in timings:
-            cur_timing_point_split = timing.split(",")
-            if int(cur_timing_point_split[6]) != 1:
+        for i, timing in enumerate(timings):
+            cur_timing_point = timing.split(",")
+            if int(cur_timing_point[6]) == 0:
                 # apply adjusted slider multiplier
-                cur_timing_point_split[1] = str(float(cur_timing_point_split[1]) * (1.0 / slider_velocity_adjust))
-            cur_timing_point = ",".join(cur_timing_point_split)
+                cur_timing_point[1] = str(float(cur_timing_point[1]) * (1.0 / slider_velocity_adjust))
+            elif len(self.file_contents_json["TimingPoints"]) != 0:
+                # add a green line at the timestamp of any red line that adjusts to slider velocity
+                # except if there is already a green line at the same timestamp
+                prev_timing = self.file_contents_json["TimingPoints"][-1].split(",")
 
+                if int(prev_timing[6]) != 0 or int(prev_timing[0]) != int(cur_timing_point[0]):
+                    insert_new_timing = copy.deepcopy(cur_timing_point)
+                    insert_new_timing[1] = str(float("-100") * (1.0 / slider_velocity_adjust))
+                    insert_new_timing[6] = "0"
+
+                    insert_new_timing = ",".join(insert_new_timing)
+                    self.file_contents_json["TimingPoints"].append(insert_new_timing)
+
+            cur_timing_point = ",".join(cur_timing_point)
             self.file_contents_json["TimingPoints"].append(cur_timing_point)
 
     def add_hit_objects(self, hit_objects_arr: list[str], start_time: int, end_time: int, fade_in_start_time: int, offset: int):
