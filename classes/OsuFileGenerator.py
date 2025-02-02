@@ -94,12 +94,10 @@ class OsuFileGenerator:
         if inherited_timings_range_end_index == -1:
             inherited_timings_range_end_index = 0
 
-        # if in the original map, there is a green line after a red line, and that green line is before the first object,
-        # we keep that green line and move it to the first object in the new map. otherwise, we remove the green line
-        # if inherited_timings[inherited_timings_range_start_index] <= uninherited_timings[uninherited_timings_range_start_index] \
-        #     or inherited_timings[inherited_timings_range_start_index] >= start_time:
-        if inherited_timings[inherited_timings_range_start_index] <= uninherited_timings[uninherited_timings_range_start_index] \
-            and uninherited_timings[uninherited_timings_range_start_index] < start_time:
+        # if in the original map, there is an instance such that green <= red < start, we remove the green line.
+        # otherwise, we move that green line to the time of the first note
+        if inherited_timings[inherited_timings_range_start_index] < uninherited_timings[uninherited_timings_range_start_index] \
+            and uninherited_timings[uninherited_timings_range_start_index] <= start_time:
             inherited_timings_range_start_index += 1
 
         timings: list[str] = []
@@ -129,7 +127,7 @@ class OsuFileGenerator:
             timings.append(",".join(cur))
 
         def custom_cmp(timing1: str, timing2: str):
-            # put green lines before red lines 
+            # put red lines before green lines 
             timing1_split = timing1.split(",")
             timing2_split = timing2.split(",")
             if int(timing1_split[0]) < int(timing2_split[0]):
@@ -137,7 +135,7 @@ class OsuFileGenerator:
             elif int(timing1_split[0]) > int(timing2_split[0]):
                 return 1
             else:
-                return 1 if int(timing1_split[6]) == 1 else -1
+                return -1 if int(timing1_split[6]) == 1 else 1
         timings.sort(key=cmp_to_key(custom_cmp))
 
         slider_velocity_adjust = slider_multiplier / 2.0
@@ -147,12 +145,12 @@ class OsuFileGenerator:
             if int(cur_timing_point[6]) == 0:
                 # apply adjusted slider multiplier
                 cur_timing_point[1] = str(float(cur_timing_point[1]) * (1.0 / slider_velocity_adjust))
-            elif len(self.file_contents_json["TimingPoints"]) != 0:
+            elif i < len(timings) - 1:
                 # add a green line at the timestamp of any red line that adjusts to slider velocity
                 # except if there is already a green line at the same timestamp
-                prev_timing = self.file_contents_json["TimingPoints"][-1].split(",")
+                next_timing = timings[i + 1].split(",")
 
-                if int(prev_timing[6]) != 0 or int(prev_timing[0]) != int(cur_timing_point[0]):
+                if int(next_timing[6]) != 0 or int(next_timing[0]) != int(cur_timing_point[0]):
                     insert_new_timing = copy.deepcopy(cur_timing_point)
                     insert_new_timing[1] = str(float("-100") * (1.0 / slider_velocity_adjust))
                     insert_new_timing[6] = "0"
@@ -187,6 +185,10 @@ class OsuFileGenerator:
             else:
                 # slider or hitcircle object
                 cur_hitobject_split[2] = str((offset + fade_in_start_time) + (int(cur_hitobject_split[2]) - start_time))
+
+                # make sure every new map starts with a new combo
+                if i == hitobjects_range_start_index:
+                    cur_hitobject_split[3] = str(int(cur_hitobject_split[3]) | (1 << 2))
 
             cur_hitobject = ",".join(cur_hitobject_split)
 
