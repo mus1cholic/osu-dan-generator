@@ -8,9 +8,9 @@
         "hp": "1.0",
         "beatmaps": [
             {
-                "osu_file_path": "D:/osu!/Songs/31419 daniwellP - Nyanyanyanyanyanyanya!/daniwellP - Nyanyanyanyanyanyanya! (theowest) [Insane].osu",
-                "start_time": "00:23:225",
-                "end_time": "02:03:725"
+                "osu_file_path": "D:/osu!/Songs/31419 daniwellP - Nyanyanyanyanyanyanya!/daniwellP - Nyanyanyanyanyanyanya! (theowest) [Collab].osu",
+                "start_time": "01:16:529",
+                "end_time": "02:51:177"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/1746664 Kotoha - God-ish/Kotoha - God-ish (IOException) [Insane].osu",
@@ -62,7 +62,7 @@
     {
         "diff_name": "3rd Dan",
         "symbol": "3",
-        "circle_size": "3.8",
+        "circle_size": "4",
         "approach_rate": "9.2",
         "overall_difficulty": "8",
         "hp": "1.0",
@@ -92,7 +92,7 @@
     {
         "diff_name": "4th Dan",
         "symbol": "4",
-        "circle_size": "4.03",
+        "circle_size": "4",
         "approach_rate": "9.2",
         "overall_difficulty": "8.3",
         "hp": "1.0",

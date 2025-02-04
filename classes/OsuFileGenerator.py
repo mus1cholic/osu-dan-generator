@@ -3,6 +3,8 @@ import copy
 
 from functools import cmp_to_key
 
+from utils.constants import NOTE_SHIFT_RESISTANCE
+
 class OsuFileGenerator:
     def __init__(self, diff_name, set_title, set_id, circle_size, approach_rate, overall_difficulty, hp):
         self.diff_name = diff_name
@@ -90,7 +92,8 @@ class OsuFileGenerator:
             uninherited_timings_possible_start_left_index += 1
 
         if abs(uninherited_timings[uninherited_timings_possible_start_left_index] - start_time) \
-            < abs(uninherited_timings[uninherited_timings_possible_start_right_index] - start_time):
+            < abs(uninherited_timings[uninherited_timings_possible_start_right_index] - start_time) \
+            or uninherited_timings[uninherited_timings_possible_start_right_index] > start_time + NOTE_SHIFT_RESISTANCE:
             uninherited_timings_range_start_index = uninherited_timings_possible_start_left_index
         else:
             uninherited_timings_range_start_index = uninherited_timings_possible_start_right_index
@@ -104,7 +107,8 @@ class OsuFileGenerator:
             uninherited_timings_possible_end_left_index += 1
 
         if abs(uninherited_timings[uninherited_timings_possible_end_left_index] - end_time) \
-            < abs(uninherited_timings[uninherited_timings_possible_end_right_index] - end_time):
+            < abs(uninherited_timings[uninherited_timings_possible_end_right_index] - end_time) \
+            or uninherited_timings[uninherited_timings_possible_end_right_index] > end_time + NOTE_SHIFT_RESISTANCE:
             uninherited_timings_range_end_index = uninherited_timings_possible_end_left_index
         else:
             uninherited_timings_range_end_index = uninherited_timings_possible_end_right_index
@@ -120,7 +124,8 @@ class OsuFileGenerator:
             inherited_timings_possible_start_left_index += 1
 
         if abs(inherited_timings[inherited_timings_possible_start_left_index] - start_time) \
-            < abs(inherited_timings[inherited_timings_possible_start_right_index] - start_time):
+            < abs(inherited_timings[inherited_timings_possible_start_right_index] - start_time) \
+            or inherited_timings[inherited_timings_possible_start_right_index] > start_time + NOTE_SHIFT_RESISTANCE:
             inherited_timings_range_start_index = inherited_timings_possible_start_left_index
         else:
             inherited_timings_range_start_index = inherited_timings_possible_start_right_index\
@@ -134,7 +139,8 @@ class OsuFileGenerator:
             inherited_timings_possible_end_left_index += 1
 
         if abs(inherited_timings[inherited_timings_possible_end_left_index] - end_time) \
-            < abs(inherited_timings[inherited_timings_possible_end_right_index] - end_time):
+            < abs(inherited_timings[inherited_timings_possible_end_right_index] - end_time) \
+            or inherited_timings[inherited_timings_possible_end_right_index] > end_time + NOTE_SHIFT_RESISTANCE:
             inherited_timings_range_end_index = inherited_timings_possible_end_left_index
         else:
             inherited_timings_range_end_index = inherited_timings_possible_end_right_index        

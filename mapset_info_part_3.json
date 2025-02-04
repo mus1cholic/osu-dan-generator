@@ -38,14 +38,14 @@
         "hp": "1.0",
         "beatmaps": [
             {
-                "osu_file_path": "D:/osu!/Songs/933630 Aether Realm - The Sun, The Moon, The Star/Aether Realm - The Sun, The Moon, The Star (ItsWinter) [Mourning Those Things I've Long Left Behind].osu",
-                "start_time": "14:13:913",
-                "end_time": "16:13:913"
+                "osu_file_path": "D:/osu!/Songs/933630 Aether Realm - The Sun, The Moon, The Star/Aether Realm - The Sun, The Moon, The Star (ItsWinter) [Mourning Those Things I've Long Left Behind 1.05x (220bpm) CS4 OD9.3].osu",
+                "start_time": "13:33:250",
+                "end_time": "15:27:536"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/1276378 lapix - Slipstream (Extended Mix)/lapix - Slipstream (Extended Mix) (KKipalt) [Collab Corsace 1.5x (262bpm) CS4 OD9.3].osu",
-                "start_time": "01:39:974",
-                "end_time": "02:40:317"
+                "osu_file_path": "D:/osu!/Songs/1276378 lapix - Slipstream (Extended Mix)/lapix - Slipstream (Extended Mix) (KKipalt) [Collab Corsace 1.45x (254bpm) CS4 AR10].osu",
+                "start_time": "01:43:422",
+                "end_time": "02:45:846"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/sHimaU - Slotcore is Dead 2/sHimaU - Slotcore is Dead (Zapy) [Poltergeist 1.05x (284bpm) AR10 OD9.3].osu",
@@ -62,7 +62,7 @@
     {
         "diff_name": "GAMMA Dan",
         "symbol": "γ",
-        "circle_size": "3.97",
+        "circle_size": "3.95",
         "approach_rate": "10",
         "overall_difficulty": "9.0",
         "hp": "1.0",
