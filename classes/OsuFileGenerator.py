@@ -246,7 +246,8 @@ class OsuFileGenerator:
             hitobjects_possible_end_left_index += 1
 
         if abs(hitobjects[hitobjects_possible_end_left_index] - end_time) \
-            < abs(hitobjects[hitobjects_possible_end_right_index] - end_time):
+            < abs(hitobjects[hitobjects_possible_end_right_index] - end_time) \
+            or hitobjects[hitobjects_possible_end_right_index] > end_time + NOTE_SHIFT_RESISTANCE:
             hitobjects_range_end_index = hitobjects_possible_end_left_index
         else:
             hitobjects_range_end_index = hitobjects_possible_end_right_index
