@@ -71,10 +71,9 @@ class BackgroundGenerator:
         new_bg.paste(bg, (0, 0))
         
         draw = ImageDraw.Draw(new_bg)
-        text = f"""{metadata['Artist']} - {metadata['Title']} ({metadata['Creator']}) [{metadata['Version']}]
-        {bpm} BPM"""
+        text = f"{metadata['Artist']} - {metadata['Title']}\n({metadata['Creator']}) [{metadata['Version']}]\n{bpm} BPM"
 
-        font_size = int(bg.width * 0.03)
+        font_size = int(bg.height * 0.04)
         font = ImageFont.truetype("res/fonts/DejaVuSans.ttf", font_size)
         
         symbol_bbox = draw.multiline_textbbox((bg.width // 2, bg.height * 7 // 8), text, align="center", font=font)
