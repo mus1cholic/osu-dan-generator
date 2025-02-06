@@ -14,6 +14,11 @@
             "filename": "mapset_info_part_3.json",
             "title": "Osu!std Tapping Dan Course - Part 3",
             "beatmap_set_id": "2315697"
+        },
+        {
+            "filename": "mapset_info_part_4.json",
+            "title": "Osu!std Tapping Dan Course - Part 4",
+            "beatmap_set_id": "-1"
         }
     ]
 }

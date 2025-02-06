@@ -128,14 +128,14 @@
         "hp": "1.0",
         "beatmaps": [
             {
-                "osu_file_path": "D:/osu!/Songs/323059 DragonForce - Defenders/DragonForce - Defenders (Spaghetti) [Legend].osu",
-                "start_time": "03:33:759",
-                "end_time": "05:42:917"
+                "osu_file_path": "D:/osu!/Songs/1016145 Victorius - Twilight Skies/Victorius - Twilight Skies (xChorse) [Born to Conquer the Universe].osu",
+                "start_time": "02:19:138",
+                "end_time": "03:44:471"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/51972 goreshit - o'er the flood/goreshit - o'er the flood (grumd) [The Flood Beneath 1.1x (213bpm) AR10 OD9.3].osu",
-                "start_time": "02:21:195",
-                "end_time": "03:51:167"
+                "osu_file_path": "D:/osu!/Songs/416949 kamome sano - __emotional_/kamome sano - emotional (Naitoshi) [Limerence].osu",
+                "start_time": "03:30:526",
+                "end_time": "04:58:802"
             },
             {
                 "osu_file_path": "D:/osu!/Songs/347719 Demetori - Kuuchuu ni Shizumu Kishinjou ~ Counter-Clock World/Demetori - Kuuchuu ni Shizumu Kishinjou ~ Counter-Clock World (jonathanlfj) [Lunatic Collab 1.2x (222bpm) AR10 OD9.3].osu",
@@ -143,9 +143,9 @@
                 "end_time": "04:56:362"
             },
             {
-                "osu_file_path": "D:/osu!/Songs/859515 K A Z M A S A - Bon Appetit S (Oldskool HappyHardcore Remix) (Short Ver)/K A Z M A S A - Bon Appetit S (Oldskool HappyHardcore Remix) (Short Ver.) (BarkingMadDog) [blend s (180 bpm)].osu",
-                "start_time": "01:41:373",
-                "end_time": "03:12:0257"
+                "osu_file_path": "D:/osu!/Songs/859515 K A Z M A S A - Bon Appetit S (Oldskool HappyHardcore Remix) (Short Ver)/K A Z M A S A - Bon Appetit S (Oldskool HappyHardcore Remix) (Short Ver.) (BarkingMadDog) [blend s].osu",
+                "start_time": "01:47:280",
+                "end_time": "03:23:280"
             }
         ]
     }

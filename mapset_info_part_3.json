@@ -178,35 +178,5 @@
                 "end_time": "03:43:694"
             }
         ]
-    },
-    {
-        "diff_name": "ETA Dan",
-        "symbol": "η",
-        "circle_size": "4.0",
-        "approach_rate": "10",
-        "overall_difficulty": "9.8",
-        "hp": "1.0",
-        "beatmaps": [
-            {
-                "osu_file_path": "D:/osu!/Songs/2078621 Raimukun - Icyxis ~True Ending~/Raimukun - Icyxis ~True Ending~ (knowledgeking) [Blessed of Aggelos ~Fake Sanctity~ 1.15x (255bpm) AR10 OD9.5].osu",
-                "start_time": "01:38:784",
-                "end_time": "02:50:229"
-            },
-            {
-                "osu_file_path": "D:/osu!/Songs/1312076 II-L - SPUTNIK-3/II-L - SPUTNIK-3 (DeviousPanda) [Expert 1.6x (272bpm) CS4 AR10 OD8.3].osu",
-                "start_time": "00:00:869",
-                "end_time": "01:46:751"
-            },
-            {
-                "osu_file_path": "D:/osu!/Songs/UNDEAD CORPORATION - MEGALOMANIA 2/UNDEAD CORPORATION - MEGALOMANIA (GoldenWolf) [woof 1.2x (324bpm) CS4 AR10 OD9.5].osu",
-                "start_time": "01:43:699",
-                "end_time": "03:45:180"
-            },
-            {
-                "osu_file_path": "D:/osu!/Songs/2125044 -45 - Crimsonic dimension/-45 - Crimsonic dimension (Sanch-KK) [Phantasm 1.85x (281bpm) AR10 OD8].osu",
-                "start_time": "02:04:556",
-                "end_time": "03:40:147"
-            }
-        ]
     }
 ]
