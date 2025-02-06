@@ -63,3 +63,6 @@ class OsuFileFormatParser:
     
     def get_full_data(self) -> dict:
         return self.data
+    
+    def get_metadata(self) -> dict:
+        return self.data["Metadata"]

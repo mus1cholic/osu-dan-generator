@@ -64,3 +64,29 @@ class BackgroundGenerator:
         self.stitch_symbol(combined_bgs, stitched_width, stitched_height)
 
         combined_bgs.save(f"generated/{self.set_title}/bg_{self.diff_name}.png")
+        
+    def stitch_metadata(self, bg_filepath, metadata, bpm, idx):
+        bg = Image.open(bg_filepath)
+        new_bg = Image.new("RGB", (bg.width, bg.height))
+        new_bg.paste(bg, (0, 0))
+        
+        draw = ImageDraw.Draw(new_bg)
+        text = f"""{metadata['Artist']} - {metadata['Title']} ({metadata['Creator']}) [{metadata['Version']}]
+        {bpm} BPM"""
+
+        font_size = int(bg.width * 0.03)
+        font = ImageFont.truetype("res/fonts/DejaVuSans.ttf", font_size)
+        
+        symbol_bbox = draw.multiline_textbbox((bg.width // 2, bg.height * 7 // 8), text, align="center", font=font)
+        symbol_width = symbol_bbox[2] - symbol_bbox[0]
+        symbol_height = symbol_bbox[3] - symbol_bbox[1]
+        symbol_x = (bg.width - symbol_width) // 2
+        symbol_y = (bg.height - symbol_height) * 7 // 8
+
+        draw.multiline_text((symbol_x, symbol_y), text, fill="white", stroke_width=font_size // 8, stroke_fill="black", align="center", font=font)
+        
+        bg_count = len(self.bg_files)
+        
+        new_bg.save(f"generated/{self.set_title}/sb_{self.diff_name}/BG{idx + 1}.png")
+        
+        return 480 / bg.height

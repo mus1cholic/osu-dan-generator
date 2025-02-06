@@ -18,14 +18,12 @@ class SongStitcher:
         self.offset = 0
 
     def get_smooth_start_time(self, audio: AudioSegment, start_time: int) -> int:
-        start_time = convert_osu_time_to_ms(start_time)
         new_start_time = max(0, start_time - 2000)
         diff = abs(new_start_time - start_time)
         
         return (new_start_time, diff)
 
     def get_smooth_end_time(self, audio: AudioSegment, end_time: int) -> tuple[int, int]:
-        end_time = convert_osu_time_to_ms(end_time)
         new_end_time = min(len(audio), end_time + 2000)
         diff = abs(new_end_time - end_time)
 
