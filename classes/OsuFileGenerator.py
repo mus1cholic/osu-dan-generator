@@ -284,7 +284,7 @@ class OsuFileGenerator:
         real_offset = cur_offset - fade_in_start_time
         
         events = self.file_contents_json["Events"]
-        events.append(f"Sprite,Foreground,Centre,\"sb_{self.diff_name}\\BG{idx + 1}.png\",320,240")
+        events.append(f"Sprite,Foreground,Centre,\"sb_{self.diff_name}\\BG{idx + 1}.jpg\",320,240")
         events.append(f" S,0,{fade_in_start_time + real_offset},,{round(scaling_factor, 5)}")
         events.append(f" F,0,{fade_in_start_time + real_offset},{true_start_time + real_offset},0,1")
         events.append(f" F,0,{true_end_time + real_offset},{fade_out_end_time + real_offset},1,0")

@@ -86,6 +86,6 @@ class BackgroundGenerator:
         
         bg_count = len(self.bg_files)
         
-        new_bg.save(f"generated/{self.set_title}/sb_{self.diff_name}/BG{idx + 1}.png")
+        new_bg.save(f"generated/{self.set_title}/sb_{self.diff_name}/BG{idx + 1}.jpg", quality=90)
         
         return 480 / bg.height
