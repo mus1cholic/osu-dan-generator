@@ -271,6 +271,24 @@ class OsuFileGenerator:
             cur_hitobject = ",".join(cur_hitobject_split)
             self.file_contents_json["HitObjects"].append(cur_hitobject)
 
+    def get_timing_point_length(self):
+        return len(self.file_contents_json["TimingPoints"])
+
+    def get_bpm(self, timing_point_idx):
+        timing_point = self.file_contents_json["TimingPoints"][timing_point_idx]
+        fields = timing_point.split(',')
+        bpm = round(60000 / float(fields[1]))
+        return bpm
+        
+    def add_sb_events(self, fade_in_start_time: int, true_start_time: int, fade_out_end_time: int, true_end_time: int, cur_offset: int, idx: int, scaling_factor: float):
+        real_offset = cur_offset - fade_in_start_time
+        
+        events = self.file_contents_json["Events"]
+        events.append(f"Sprite,Foreground,Centre,\"sb_{self.diff_name}\\BG{idx + 1}.jpg\",320,240")
+        events.append(f" S,0,{fade_in_start_time + real_offset},,{round(scaling_factor, 5)}")
+        events.append(f" F,0,{fade_in_start_time + real_offset},{true_start_time + real_offset},0,1")
+        events.append(f" F,0,{true_end_time + real_offset},{fade_out_end_time + real_offset},1,0")
+
     def export(self):
         with open(f"generated/{self.set_title}/{self.diff_name}.osu", 'w', encoding='utf-8') as osu_file:
             osu_file.write('osu file format v14\n\n')

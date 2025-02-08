@@ -7,6 +7,8 @@ from classes.OsuFileFormatParser import OsuFileFormatParser
 from classes.OsuFileGenerator import OsuFileGenerator
 from classes.SongStitcher import SongStitcher
 
+from utils.utils import convert_osu_time_to_ms
+
 def create_dan(mapset_info_filename, mapset_info_title, mapset_info_setid):
     with open(mapset_info_filename, encoding='utf-8') as f:
         mapset_data = json.load(f)
@@ -24,38 +26,49 @@ def create_dan(mapset_info_filename, mapset_info_title, mapset_info_setid):
         hp = diff["hp"]
         beatmaps = diff["beatmaps"]
 
+        os.makedirs(f"generated/{mapset_info_title}/sb_{diff_name}")
+
         background_generator = BackgroundGenerator(diff_name, mapset_info_title, symbol, beatmaps)
         song_stitcher = SongStitcher(diff_name, mapset_info_title)
         osu_file_generator = OsuFileGenerator(diff_name, mapset_info_title, mapset_info_setid, circle_size, approach_rate, overall_difficulty, hp)
 
-        for map in beatmaps:
+        for idx, map in enumerate(beatmaps):
             osu_file_path = map["osu_file_path"]
             start_time_unformatted = map["start_time"]
             end_time_unformatted = map["end_time"]
+            
+            start_time = convert_osu_time_to_ms(start_time_unformatted)
+            end_time = convert_osu_time_to_ms(end_time_unformatted)
 
             file_parser = OsuFileFormatParser(osu_file_path)
             
             # stitch songs
             audio_file_path = file_parser.get_song_file_path()
-            song_stitcher.stitch(audio_file_path, start_time_unformatted, end_time_unformatted)
+            song_stitcher.stitch(audio_file_path, start_time, end_time)
 
             # add timing points and hit objects
             timing_points = file_parser.get_timing_points()
             hit_objects = file_parser.get_hit_objects()
             slider_multiplier = file_parser.get_slider_multiplier()
+            metadata = file_parser.get_metadata()
 
             true_start_time = song_stitcher.get_true_start_time()
             fade_in_start_time = song_stitcher.get_fade_in_start_time()
             true_end_time = song_stitcher.get_true_end_time()
-            fade_out_end_time = song_stitcher.get_fade_out_end_time
+            fade_out_end_time = song_stitcher.get_fade_out_end_time()
             cur_offset = song_stitcher.get_offset()
 
+            curr_idx = osu_file_generator.get_timing_point_length()
             osu_file_generator.add_timing_points(timing_points, slider_multiplier, true_start_time, true_end_time, fade_in_start_time, cur_offset)
             osu_file_generator.add_hit_objects(hit_objects, true_start_time, true_end_time, fade_in_start_time, cur_offset)
+            bpm = osu_file_generator.get_bpm(curr_idx)
 
             # add backgrounds
             bg_filepath = file_parser.get_bg_path()
             background_generator.add_background(bg_filepath)
+            scaling_factor = background_generator.stitch_metadata(bg_filepath, metadata, bpm, idx)
+            
+            osu_file_generator.add_sb_events(fade_in_start_time, true_start_time, fade_out_end_time, true_end_time, cur_offset, idx, scaling_factor)
 
         background_generator.generate()
         song_stitcher.export()
