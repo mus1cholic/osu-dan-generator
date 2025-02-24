@@ -112,6 +112,9 @@ class OsuFileGenerator:
         else:
             uninherited_timings_range_end_index = uninherited_timings_possible_end_right_index
 
+        self.bpm_timing_point = uninherited_timings_points_arr[uninherited_timings_range_start_index]
+
+
         if len(inherited_timings_points_arr) == 0:
             # insert a "fake" green line at the time of the first red line if
             # there's no green lines in the map
@@ -278,10 +281,10 @@ class OsuFileGenerator:
     def get_timing_point_length(self):
         return len(self.file_contents_json["TimingPoints"])
 
-    def get_bpm(self, timing_point_idx):
-        timing_point = self.file_contents_json["TimingPoints"][timing_point_idx]
-        fields = timing_point.split(',')
+    def get_bpm(self):
+        fields = self.bpm_timing_point.split(',')
         bpm = round(60000 / float(fields[1]))
+
         return bpm
         
     def add_sb_events(self, fade_in_start_time: int, true_start_time: int, fade_out_end_time: int, true_end_time: int, cur_offset: int, idx: int, scaling_factor: float):

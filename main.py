@@ -58,10 +58,9 @@ def create_dan(mapset_info_filename, mapset_info_title, mapset_info_setid):
             fade_out_end_time = song_stitcher.get_fade_out_end_time()
             cur_offset = song_stitcher.get_offset()
 
-            curr_idx = osu_file_generator.get_timing_point_length()
             osu_file_generator.add_timing_points(timing_points, slider_multiplier, true_start_time, true_end_time, fade_in_start_time, cur_offset)
             osu_file_generator.add_hit_objects(hit_objects, true_start_time, true_end_time, fade_in_start_time, cur_offset)
-            bpm = osu_file_generator.get_bpm(curr_idx)
+            bpm = osu_file_generator.get_bpm()
 
             # add backgrounds
             bg_filepath = file_parser.get_bg_path()
