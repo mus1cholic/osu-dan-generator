@@ -78,9 +78,8 @@ class OsuFileGenerator:
             else:
                 inherited_timings_points_arr.append(time)
 
-        # this weird and complicated logic has to be done because the osu editor occasionally moves
-        # objects and timings by a few ms each. that's why AImod also exists. very annoying workaround,
-        # but must be done
+        # the following weird and complicated logic has to be done because the osu editor occasionally moves
+        # objects and timings by a few ms each. that's why AImod also exists. very annoying workaround
 
         uninherited_timings = [int(float(time.split(",")[0])) for time in uninherited_timings_points_arr]
         uninherited_timings_possible_start_right_index = bisect.bisect_right(uninherited_timings, start_time)
@@ -113,6 +112,11 @@ class OsuFileGenerator:
         else:
             uninherited_timings_range_end_index = uninherited_timings_possible_end_right_index
 
+        if len(inherited_timings_points_arr) == 0:
+            # insert a "fake" green line at the time of the first red line if
+            # there's no green lines in the map
+            first_red_line_time = uninherited_timings[uninherited_timings_range_start_index]
+            inherited_timings_points_arr.append(f"{first_red_line_time},-100,4,2,0,100,0,0")
 
         inherited_timings = [int(float(time.split(",")[0])) for time in inherited_timings_points_arr]
         inherited_timings_possible_start_right_index = bisect.bisect_right(inherited_timings, start_time)
