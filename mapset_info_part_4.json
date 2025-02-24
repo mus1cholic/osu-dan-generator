@@ -28,5 +28,35 @@
                 "end_time": "03:40:147"
             }
         ]
+    },
+    {
+        "diff_name": "THETA Dan",
+        "symbol": "θ",
+        "circle_size": "4.0",
+        "approach_rate": "10",
+        "overall_difficulty": "10.0",
+        "hp": "1.0",
+        "beatmaps": [
+            {
+                "osu_file_path": "D:/osu!/Songs/1946671 Gram (DJ Genki) - Sigmund (The Requiem's Extended MIX)/Gram (DJ Genki) - Sigmund (The Requiem's Extended MIX) (-NeBu-) [AimCup ver. 1.1x (220bpm) CS4 AR10 OD9.3].osu",
+                "start_time": "00:36:590",
+                "end_time": "02:21:317"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/947770 HyuN - Grin/HyuN - Grin (ktgster) [Extreme 1.6x (208bpm) CS4 AR9.8 OD8].osu",
+                "start_time": "00:00:565",
+                "end_time": "01:32:872"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/133440 MiddleIsland - Delrio/MiddleIsland - Delrio (Dustice) [From the River 1.35x (365bpm) AR9.8 OD8].osu",
+                "start_time": "00:15:535",
+                "end_time": "02:22:229"
+            },
+            {
+                "osu_file_path": "D:/osu!/Songs/387311 Inferi - Those Who from the Heavens Came/Inferi - Those Who from the Heavens Came (Mazzerin) [Fengshen Yanyi 1.25x (313bpm) CS4 AR10 OD9.3].osu",
+                "start_time": "00:36:137",
+                "end_time": "02:42:188"
+            }
+        ]
     }
 ]
