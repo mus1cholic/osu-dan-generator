@@ -1,3 +1,4 @@
+import re
 from PIL import Image, ImageDraw, ImageFont
 
 class BackgroundGenerator:
@@ -71,7 +72,11 @@ class BackgroundGenerator:
         new_bg.paste(bg, (0, 0))
         
         draw = ImageDraw.Draw(new_bg)
-        text = f"{metadata['Artist']} - {metadata['Title']}\n({metadata['Creator']}) [{metadata['Version']}]\n{bpm} BPM"
+        version = metadata['Version']
+        match = re.match(r'(.* \d+\.\d+x) \(\d+bpm\)', version)
+        if match:
+            version = match.group(1)
+        text = f"{metadata['Artist']} - {metadata['Title']}\n({metadata['Creator']}) [{version}]\n{bpm} BPM"
 
         font_size = int(bg.height * 0.04)
         font = ImageFont.truetype("res/fonts/DejaVuSans.ttf", font_size)
