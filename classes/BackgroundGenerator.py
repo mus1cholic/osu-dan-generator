@@ -72,7 +72,7 @@ class BackgroundGenerator:
         new_bg = Image.new("RGB", (bg.width, bg.height))
         new_bg.paste(bg, (0, 0))
         
-        if bg.height != 720:
+        if bg.height < 720:
             new_width = bg.width * 720 // bg.height
             new_height = 720
             new_bg = new_bg.resize(size=(new_width, new_height), resample=Image.Resampling.LANCZOS)
