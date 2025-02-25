@@ -68,8 +68,17 @@ class BackgroundGenerator:
         
     def stitch_metadata(self, bg_filepath, metadata, bpm, idx):
         bg = Image.open(bg_filepath)
+        
         new_bg = Image.new("RGB", (bg.width, bg.height))
         new_bg.paste(bg, (0, 0))
+        
+        if bg.height != 720:
+            new_width = bg.width * 720 // bg.height
+            new_height = 720
+            new_bg = new_bg.resize(size=(new_width, new_height), resample=Image.Resampling.LANCZOS)
+        else:
+            new_width = bg.width
+            new_height = bg.height
         
         draw = ImageDraw.Draw(new_bg)
         version = metadata['Version']
@@ -78,14 +87,14 @@ class BackgroundGenerator:
             version = match.group(1)
         text = f"{metadata['Artist']} - {metadata['Title']}\n({metadata['Creator']}) [{version}]\n{bpm} BPM"
 
-        font_size = int(bg.height * 0.04)
+        font_size = int(new_height * 0.04)
         font = ImageFont.truetype("res/fonts/DejaVuSans.ttf", font_size)
         
-        symbol_bbox = draw.multiline_textbbox((bg.width // 2, bg.height * 7 // 8), text, align="center", font=font)
+        symbol_bbox = draw.multiline_textbbox((new_width // 2, new_height * 7 // 8), text, align="center", font=font)
         symbol_width = symbol_bbox[2] - symbol_bbox[0]
         symbol_height = symbol_bbox[3] - symbol_bbox[1]
-        symbol_x = (bg.width - symbol_width) // 2
-        symbol_y = (bg.height - symbol_height) * 7 // 8
+        symbol_x = (new_width - symbol_width) // 2
+        symbol_y = (new_height - symbol_height) * 7 // 8
 
         draw.multiline_text((symbol_x, symbol_y), text, fill="white", stroke_width=font_size // 8, stroke_fill="black", align="center", font=font)
         
@@ -93,4 +102,4 @@ class BackgroundGenerator:
         
         new_bg.save(f"generated/{self.set_title}/sb_{self.diff_name}/BG{idx + 1}.jpg", quality=90)
         
-        return 480 / bg.height
+        return 480 / new_height
