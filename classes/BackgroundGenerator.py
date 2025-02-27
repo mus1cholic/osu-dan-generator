@@ -82,7 +82,7 @@ class BackgroundGenerator:
         
         draw = ImageDraw.Draw(new_bg)
         version = metadata['Version']
-        match = re.match(r'(.* \d+\.\d+x) \(\d+bpm\)', version)
+        match = re.match(r'(.*\d+x) \(\d+bpm\)', version)
         if match:
             version = match.group(1)
         text = f"{metadata['Artist']} - {metadata['Title']}\n({metadata['Creator']}) [{version}]\n{bpm} BPM"
